@@ -1,0 +1,22 @@
+type,name,serial,bottom_height,height,length,section,bool_line,buoyancy,width,diameter,drag,material,comment,top_height,bool_clampon,total_buoyancy,num_inline,id,height_along_inline,clamped_to_name,clamped_to_serial,bool_fit,inline_bottom,inline_top,passive_weight,passive_drag,mooring
+miscs,Lander frame,,0.0,,2.6,,False,0.0,0.0,0.0,0.0,1,,2.6,False,-25.0,1,0,,,,,,,,,L245
+miscs,NTUS (UWA),360,,0.21,0.31,,False,-0.25,0.11,0.0,1.3,5,,,True,,1,1,0.21,Lander frame,,True,0.0,2.6,False,False,L245
+miscs,RBRquartz TP,213897,,0.33,0.31,,False,-0.25,0.11,0.0,1.3,5,,,True,,1,2,0.33,Lander frame,,True,0.0,2.6,False,False,L245
+cms,Signature 1000,100460,,0.33,0.3,,False,0.0,0.0,0.0,0.0,1,# Check lengths,,True,,1,3,0.33,Lander frame,,True,0.0,2.6,True,True,L245
+cms,Vector,6329,,0.49,0.7,,False,0.0,0.0,0.0,0.0,1,# Check lengths,,True,,1,4,0.49,Lander frame,,True,0.0,2.6,True,True,L245
+miscs,NTUS (UWA),1521,,0.54,0.31,,False,-0.25,0.11,0.0,1.3,5,,,True,,1,5,0.54,Lander frame,,True,0.0,2.6,False,False,L245
+cms,Vector,6019,,0.9,0.7,,False,0.0,0.0,0.0,0.0,1,# Check lengths,,True,,1,6,0.9,Lander frame,,True,0.0,2.6,True,True,L245
+miscs,SBE 19+ cage,6530,,1.12,0.45,,False,-20.0,0.2,0.0,1.3,1,,,True,,1,7,1.12,Lander frame,,True,0.0,2.6,False,False,L245
+miscs,NTUS (UWA),359,,1.18,0.31,,False,-0.25,0.11,0.0,1.3,5,,,True,,1,8,1.18,Lander frame,,True,0.0,2.6,False,False,L245
+miscs,LISST_200X (UWA),2031,,1.23,0.2,,False,-4.0,0.4,0.0,1.3,1,,,True,,1,9,1.23,Lander frame,,True,0.0,2.6,False,False,L245
+cms,Vector,6017,,1.5,0.7,,False,0.0,0.0,0.0,0.0,1,# Check lengths,,True,,1,10,1.5,Lander frame,,True,0.0,2.6,True,True,L245
+rigging,16mmDS-L-16mmDS,,2.6,,0.21,,False,-0.75,0.025,0.0,1.3,1,,2.81,False,-0.75,2,11,,,,,,,,,L245
+wires,3/8 wire rope,,2.81,,70.6,A,True,-23.298,0.009,0.0,1.3,1,The RPS special,73.41,False,-23.348,3,12,,,,,,,,,L245
+miscs,Zn Anode (UWA),,,4.0,0.2,A,False,-0.05,0.025,0.0,1.3,5,,,True,,3,13,1.19,3/8 wire rope,,True,2.81,73.41,False,False,L245
+floats,popup buoy,,73.41,,0.7,,False,20.0,0.0,0.4,0.65,4,,74.11,False,20.0,4,14,,,,,,,,,L245
+arcels,Edgetech MF SD,54435,,74.71,0.7,,False,0.0,0.0,0.0,0.0,1,,,True,,4,15,1.3,popup buoy,,False,73.41,74.11,True,True,L245
+floats,14in Panther Plast (UWA),,74.11,,0.3556,,False,17.6,0.0,0.3556,0.65,4,# http://trawlworks.com/floats.html,74.4656,False,17.6,5,16,,,,,,,,,L245
+floats,popup buoy,,74.4656,,0.7,,False,20.0,0.0,0.4,0.65,4,,75.1656,False,20.0,6,17,,,,,,,,,L245
+arcels,Edgetech MF SD,53086 (upper),,74.70559999999999,0.7,,False,0.0,0.0,0.0,0.0,1,,,True,,6,18,0.24,popup buoy,,False,74.4656,75.1656,True,True,L245
+floats,14in Panther Plast (UWA),,75.1656,,0.3556,,False,17.6,0.0,0.3556,0.65,4,# http://trawlworks.com/floats.html,75.5212,False,17.6,7,19,,,,,,,,,L245
+arcels,Sonardyne ORT,290238-004 [A4],,75.1656,0.7,,False,0.0,0.0,0.0,0.0,1,,,True,,7,20,0.0,14in Panther Plast (UWA),,False,75.1656,75.5212,True,True,L245

@@ -1,0 +1,67 @@
+type,name,serial,bottom_height,height,length,section,bool_line,buoyancy,width,diameter,drag,material,comment,top_height,bool_clampon,total_buoyancy,num_inline,id,height_along_inline,clamped_to_name,clamped_to_serial,bool_fit,inline_bottom,inline_top,passive_weight,passive_drag,mooring
+anchors,Anchor N280,stack release,0.0,,0.83,,False,-900.0,0.8,0.0,1.3,1,,0.83,False,-900.25,1,0,,,,,,,,,N280
+miscs,RBRquartz TP,213896,,0.6,0.31,,False,-0.25,0.11,0.0,1.3,5,,,True,,1,1,0.6,Anchor N280,stack release,True,0.0,0.83,False,False,N280
+rigging,16mmBS,,0.83,,0.06,,False,-0.65,0.025,0.0,1.3,1,,0.8899999999999999,False,-0.65,2,2,,,,,,,,,N280
+chains,3/8 chain SL,,0.8899999999999999,,1.8,,True,-4.194,0.022,0.0,1.3,1,Standard for above anchor,2.69,False,-4.194,3,3,,,,,,,,,N280
+rigging,16mmBS,,2.69,,0.06,,False,-0.65,0.025,0.0,1.3,1,,2.75,False,-0.65,4,4,,,,,,,,,N280
+rigging,10mm Load Ring,,2.75,,0.155,,False,0.5,0.025,0.0,1.3,1,,2.905,False,0.5,5,5,,,,,,,,,N280
+arcels,Ribuck Dual Kit for Sonardyne ORT (UWA),,2.905,,0.94,,False,-35.0,0.28,0.0,1.3,1,,3.8449999999999998,False,-35.0,6,6,,,,,,,,,N280
+arcels,Sonardyne ORT,290238-004 [A4],,3.255,0.7,,False,0.0,0.0,0.0,0.0,1,,,True,,6,7,0.35,Ribuck Dual Kit for Sonardyne ORT (UWA),,False,2.905,3.8449999999999998,True,True,N280
+arcels,Sonardyne ORT,284837-003 [95],,3.255,0.7,,False,0.0,0.0,0.0,0.0,1,,,True,,6,8,0.35,Ribuck Dual Kit for Sonardyne ORT (UWA),,False,2.905,3.8449999999999998,True,True,N280
+rigging,16mmBS,,3.8449999999999998,,0.06,,False,-0.65,0.025,0.0,1.3,1,,3.905,False,-0.65,7,9,,,,,,,,,N280
+rigging,8mm Load Ring,,3.905,,0.13,,False,0.5,0.025,0.0,1.3,1,,4.035,False,0.5,8,10,,,,,,,,,N280
+rigging,16mmBS,,4.035,,0.06,,False,-0.65,0.025,0.0,1.3,1,,4.095,False,-0.65,9,11,,,,,,,,,N280
+miscs,Swivel (UWA),,4.095,,0.2,,False,-4.0,0.06,0.0,1.3,1,,4.295,False,-4.0,10,12,,,,,,,,,N280
+rigging,16mmBS,,4.295,,0.06,,False,-0.65,0.025,0.0,1.3,1,,4.3549999999999995,False,-0.65,11,13,,,,,,,,,N280
+rigging,8mm Load Ring,,4.3549999999999995,,0.13,,False,0.5,0.025,0.0,1.3,1,,4.484999999999999,False,0.5,12,14,,,,,,,,,N280
+rigging,16mmBS,,4.484999999999999,,0.06,,False,-0.65,0.025,0.0,1.3,1,,4.544999999999999,False,-0.65,13,15,,,,,,,,,N280
+cms,75kHz+30in_sph (UWA),,4.544999999999999,,1.72,,False,20.0,0.0,0.76,0.5,4,,6.264999999999999,False,20.0,14,16,,,,,,,,,N280
+cms,Longranger,24613,,5.984999999999999,1.0,,False,0.0,0.0,0.0,0.0,1,# Check lengths,,True,,14,17,1.44,75kHz+30in_sph (UWA),,True,4.544999999999999,6.264999999999999,True,True,N280
+rigging,16mmBS,,6.264999999999999,,0.06,,False,-0.65,0.025,0.0,1.3,1,,6.324999999999998,False,-0.65,15,18,,,,,,,,,N280
+rigging,8mm Load Ring,,6.324999999999998,,0.13,,False,0.5,0.025,0.0,1.3,1,,6.454999999999998,False,0.5,16,19,,,,,,,,,N280
+rigging,13mmBS,,6.454999999999998,,0.047,,False,-0.65,0.025,0.0,1.3,1,,6.501999999999998,False,-0.65,17,20,,,,,,,,,N280
+wires,3/8 wire rope,,6.501999999999998,,195.0,A,True,-64.35000000000001,0.009,0.0,1.3,1,The RPS special,201.502,False,-69.65,18,21,,,,,,,,,N280
+miscs,Zn Anode (UWA),,,9.201999999999998,0.2,A,False,-0.05,0.025,0.0,1.3,5,,,True,,18,22,2.7,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3719,,11.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,39,4.698000000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3753,,16.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,40,9.698,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3721,,21.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,41,14.698,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3722,,31.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,42,24.698,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3723,,41.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,43,34.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 sync. T (UWA),4452,,51.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,44,44.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3724,,61.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,45,54.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3725,,71.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,46,64.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,RBR duet (UWA),82536,,81.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,47,74.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 sync. T (UWA),4453,,91.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,48,84.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3726,,101.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,49,94.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3727,,111.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,50,104.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3728,,121.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,51,114.69800000000001,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3729,,131.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,52,124.698,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3730,,141.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,53,134.69799999999998,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3731,,151.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,54,144.69799999999998,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3747,,161.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,55,154.69799999999998,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 sync. T (UWA),4454,,171.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,56,164.69799999999998,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3749,,181.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,57,174.69799999999998,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. TP (UWA),6527,,191.2,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,58,184.69799999999998,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+miscs,SBE39 ext. T (UWA),3750,,200.7,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,18,59,194.19799999999998,3/8 wire rope,,True,6.501999999999998,201.502,False,False,N280
+rigging,13mmBS,,201.502,,0.047,,False,-0.65,0.025,0.0,1.3,1,,201.549,False,-0.65,19,23,,,,,,,,,N280
+rigging,10mm Load Ring,,201.549,,0.155,,False,0.5,0.025,0.0,1.3,1,,201.704,False,0.5,20,24,,,,,,,,,N280
+rigging,16mmBS,,201.704,,0.06,,False,-0.65,0.025,0.0,1.3,1,,201.764,False,-0.65,21,25,,,,,,,,,N280
+floats,30in (UWA),7-13_Buoy61_300m,201.764,,0.96,,False,149.0,0.0,0.76,0.65,4,,202.72400000000002,False,149.0,22,26,,,,,,,,,N280
+rigging,13mmBS,,202.72400000000002,,0.047,,False,-0.65,0.025,0.0,1.3,1,,202.77100000000002,False,-0.65,23,27,,,,,,,,,N280
+wires,3/8 wire rope,,202.77100000000002,,62.5,B,True,-20.625,0.009,0.0,1.3,1,The RPS special,265.271,False,-22.175,24,28,,,,,,,,,N280
+miscs,Zn Anode (UWA),,,206.27100000000002,0.2,B,False,-0.05,0.025,0.0,1.3,5,,,True,,24,29,3.5,3/8 wire rope,,True,202.77100000000002,265.271,False,False,N280
+miscs,SBE39 ext. T (UWA),3752,,211.27,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,24,60,8.498999999999995,3/8 wire rope,,True,202.77100000000002,265.271,False,False,N280
+miscs,SBE39 ext. TP (UWA),6528,,221.27,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,24,61,18.498999999999995,3/8 wire rope,,True,202.77100000000002,265.271,False,False,N280
+miscs,SBE39 ext. T (UWA),3754,,231.27,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,24,62,28.498999999999995,3/8 wire rope,,True,202.77100000000002,265.271,False,False,N280
+miscs,SBE39 sync. T (UWA),4455,,241.27,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,24,63,38.498999999999995,3/8 wire rope,,True,202.77100000000002,265.271,False,False,N280
+miscs,SBE39 ext. T (UWA),3798,,251.27,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,24,64,48.498999999999995,3/8 wire rope,,True,202.77100000000002,265.271,False,False,N280
+miscs,SBE39 int. TP (UWA),5082,,264.67,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,24,65,61.899,3/8 wire rope,,True,202.77100000000002,265.271,False,False,N280
+rigging,13mmBS,,265.271,,0.047,,False,-0.65,0.025,0.0,1.3,1,,265.31800000000004,False,-0.65,25,30,,,,,,,,,N280
+rigging,10mm Load Ring,,265.31800000000004,,0.155,,False,0.5,0.025,0.0,1.3,1,,265.473,False,0.5,26,31,,,,,,,,,N280
+rigging,16mmBS,,265.473,,0.06,,False,-0.65,0.025,0.0,1.3,1,,265.533,False,-0.65,27,32,,,,,,,,,N280
+floats,30in (UWA),7-13_Buoy60_300m,265.533,,0.96,,False,149.0,0.0,0.76,0.65,4,,266.493,False,149.0,28,33,,,,,,,,,N280
+miscs,Sercel+frame (UWA),,266.493,,0.55,,False,-10.0,0.15,0.0,1.3,1,,267.043,False,-10.0,29,34,,,,,,,,,N280
+miscs,Sercel,126991,,266.893,0.05,,False,0.0,0.0,0.0,0.0,1,,,True,,29,35,0.4,Sercel+frame (UWA),,True,266.493,267.043,True,True,N280
+wires,6mm AmSteel,,267.043,,1.0,C,True,0.001,0.006,0.0,1.3,4,Rigging shed,268.043,False,0.001,30,36,,,,,,,,,N280
+rigging,13mmBS,,268.043,,0.047,,False,-0.65,0.025,0.0,1.3,1,,268.09000000000003,False,-0.65,31,37,,,,,,,,,N280
+floats,14in Panther Plast (UWA),,268.09000000000003,,0.3556,,False,17.6,0.0,0.3556,0.65,4,# http://trawlworks.com/floats.html,268.4456,False,17.6,32,38,,,,,,,,,N280

@@ -1,0 +1,16 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore MATLAB backup files
+*.asv
+
+# Coding
+.vscode/
+.pytest_cache/
+.venv/

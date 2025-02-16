@@ -1,0 +1,29 @@
+type,name,serial,bottom_height,height,length,section,bool_line,buoyancy,width,diameter,drag,material,comment,top_height,bool_clampon,total_buoyancy,num_inline,id,height_along_inline,clamped_to_name,clamped_to_serial,bool_fit,inline_bottom,inline_top,passive_weight,passive_drag,mooring
+anchors,3 Railway Wheels,,0.0,,0.55,,False,-1350.0,1.0,0.0,1.3,1,,0.55,False,-1350.0,1,0,,,,,,,,,M2
+rigging,16mmBS,,0.55,,0.06,,False,-0.65,0.025,0.0,1.3,1,,0.6100000000000001,False,-0.65,2,1,,,,,,,,,M2
+wires,3/8 wire rope,,0.6100000000000001,,50.0,A,True,-16.5,0.009,0.0,1.3,1,The RPS special,50.61,False,-17.6,3,2,,,,,,,,,M2
+miscs,Zn Anode (UWA),,,4.61,0.2,A,False,-0.05,0.025,0.0,1.3,5,,,True,,3,3,4.0,3/8 wire rope,,True,0.6100000000000001,50.61,False,False,M2
+miscs,FLNTUSB (UWA),2997,,10.0,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,3,20,9.39,3/8 wire rope,,True,0.6100000000000001,50.61,False,False,M2
+miscs,SBE39 T (UWA),3975,,15.0,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,3,21,14.39,3/8 wire rope,,True,0.6100000000000001,50.61,False,False,M2
+miscs,FLNTUSB (UWA),3194,,20.0,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,3,22,19.39,3/8 wire rope,,True,0.6100000000000001,50.61,False,False,M2
+miscs,SBE56 T (UWA),7343,,30.0,0.3,A,False,-0.05,0.025,0.0,1.3,5,,,True,,3,23,29.39,3/8 wire rope,,True,0.6100000000000001,50.61,False,False,M2
+miscs,SBE39 ext. T (UWA),3799,,45.0,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,3,24,44.39,3/8 wire rope,,True,0.6100000000000001,50.61,False,False,M2
+rigging,13mmBS,,50.61,,0.047,,False,-0.65,0.025,0.0,1.3,1,,50.657,False,-0.65,4,4,,,,,,,,,M2
+rigging,8mm Load Ring,,50.657,,0.13,,False,0.5,0.025,0.0,1.3,1,,50.787,False,0.5,5,5,,,,,,,,,M2
+rigging,16mmBS,,50.787,,0.06,,False,-0.65,0.025,0.0,1.3,1,,50.847,False,-0.65,6,6,,,,,,,,,M2
+cms,75kHz+40in+Ti300kHz (UWA),,50.847,,2.3,,False,85.8,0.0,1.016,0.75,4,,53.147,False,85.8,7,7,,,,,,,,,M2
+cms,Sentinel,20089,,51.217,0.4,,False,0.0,0.0,0.0,0.0,1,# Check lengths,,True,,7,8,0.37,75kHz+40in+Ti300kHz (UWA),,True,50.847,53.147,True,True,M2
+cms,Longranger,16870,,52.777,1.0,,False,0.0,0.0,0.0,0.0,1,# Check lengths,,True,,7,9,1.93,75kHz+40in+Ti300kHz (UWA),,True,50.847,53.147,True,True,M2
+rigging,16mmBS,,53.147,,0.06,,False,-0.65,0.025,0.0,1.3,1,,53.207,False,-0.65,8,10,,,,,,,,,M2
+wires,3/8 wire rope,,53.207,,70.0,B,True,-23.1,0.009,0.0,1.3,1,The RPS special,123.207,False,-23.700000000000003,9,11,,,,,,,,,M2
+miscs,Zn Anode (UWA),,,57.207,0.2,B,False,-0.05,0.025,0.0,1.3,5,,,True,,9,12,4.0,3/8 wire rope,,True,53.207,123.207,False,False,M2
+miscs,FLNTUSB (UWA),1835,,70.0,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,9,25,16.793,3/8 wire rope,,True,53.207,123.207,False,False,M2
+miscs,SBE56 T (UWA),7344,,90.0,0.3,B,False,-0.05,0.025,0.0,1.3,5,,,True,,9,26,36.793,3/8 wire rope,,True,53.207,123.207,False,False,M2
+miscs,SBE39 sync. T (UWA),4456,,100.0,0.31,B,False,-0.25,0.11,0.0,1.3,5,,,True,,9,27,46.793,3/8 wire rope,,True,53.207,123.207,False,False,M2
+rigging,13mmBS,,123.207,,0.047,,False,-0.65,0.025,0.0,1.3,1,,123.25399999999999,False,-0.65,10,13,,,,,,,,,M2
+rigging,8mm Load Ring,,123.25399999999999,,0.13,,False,0.5,0.025,0.0,1.3,1,,123.38399999999999,False,0.5,11,14,,,,,,,,,M2
+rigging,16mmBS,,123.38399999999999,,0.06,,False,-0.65,0.025,0.0,1.3,1,,123.44399999999999,False,-0.65,12,15,,,,,,,,,M2
+floats,41in ORE,,123.44399999999999,,1.04,,False,433.0,0.0,1.04,0.65,1,,124.484,False,433.0,13,16,,,,,,,,,M2
+wires,6mm AmSteel,,124.484,,1.0,,True,0.001,0.006,0.0,1.3,4,Rigging shed,125.484,False,0.001,14,17,,,,,,,,,M2
+rigging,16mmDS,,125.484,,0.06,,False,-0.65,0.025,0.0,1.3,1,,125.544,False,-0.65,15,18,,,,,,,,,M2
+floats,14in Panther Plast (UWA),,125.544,,0.3556,,False,17.6,0.0,0.3556,0.65,4,# http://trawlworks.com/floats.html,125.89959999999999,False,17.6,16,19,,,,,,,,,M2

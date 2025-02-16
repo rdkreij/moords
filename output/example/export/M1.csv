@@ -1,0 +1,7 @@
+type,name,serial,bottom_height,height,length,section,bool_line,buoyancy,width,diameter,drag,material,comment,top_height,bool_clampon,total_buoyancy,num_inline,id,height_along_inline,clamped_to_name,clamped_to_serial,bool_fit,inline_bottom,inline_top,passive_weight,passive_drag,mooring
+anchors,3 Railway Wheels,,0.0,,0.55,,False,-1350.0,1.0,0.0,1.3,1,,0.55,False,-1350.0,1,0,,,,,,,,,M1
+wires,3/8 wire rope,,0.55,,50.0,A,True,-16.5,0.009,0.0,1.3,1,The RPS special,50.55,False,-17.05,2,1,,,,,,,,,M1
+miscs,Zn Anode (UWA),,,4.55,0.2,A,False,-0.05,0.025,0.0,1.3,5,,,True,,2,2,4.0,3/8 wire rope,,True,0.55,50.55,False,False,M1
+miscs,FLNTUSB (UWA),2927,,20.0,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,2,4,19.45,3/8 wire rope,,True,0.55,50.55,False,False,M1
+miscs,SBE39 T (UWA),3921,,30.0,0.31,A,False,-0.25,0.11,0.0,1.3,5,,,True,,2,5,29.45,3/8 wire rope,,True,0.55,50.55,False,False,M1
+floats,41in ORE,,50.55,,1.04,,False,433.0,0.0,1.04,0.65,1,,51.589999999999996,False,433.0,3,3,,,,,,,,,M1
