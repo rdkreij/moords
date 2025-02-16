@@ -18,14 +18,13 @@ The simulation algorithm is based on the Mooring Design & Dynamics MATLAB packag
 - `tests/`: includes Python test scripts to validate the functionality of the `moords` package.
 - `output/`: contains outputs from the Jupyter notebooks, including printed tables, figures, and exported moorings for use in MATLAB.
 
-<!-- ## Installation
+## Installation
 To install the `moords` package, follow these steps:
 
 ```bash
-git clone https://github.com/XXXX/moords.git
-cd moords
-pip install -r requirements.txt
-``` -->
+pip install git+https://github.com/rdkreij/moords
+```
+
 ## Basic usage
 
 To get started, we recommend following the step-by-step instructions provided in the `notebooks/design_example.ipynb` notebook. The general workflow is as follows:
