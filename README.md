@@ -26,7 +26,7 @@ pip install git+https://github.com/rdkreij/moords
 ```
 
 ## Getting started
-Import modules
+**Import required modules**
 ```bash
 import matplotlib.pyplot as plt
 import numpy as np
@@ -35,7 +35,7 @@ import xarray as xr
 
 import moords
 ```
-Construct mooring element database 
+**Define mooring element database:** create a dataframe of mooring elements with relevant properties.
 ```bash
 columns = ["name", "type", "buoyancy_kg", "length_m", "width_m", "diameter_m", "drag", "material", "comment"]
 # Material index: 1: Steel, 2: Nylon, 3: Dacron, 4: Polyprop, 5: Polyethy, 6: Kevlar, 7: Aluminum, 8: Dyneema
@@ -49,7 +49,7 @@ rows = [
 ]
 df_database = pd.DataFrame(rows, columns=columns).set_index("name")
 ```
-Build the mooring
+**Build the mooring:** create a mooring system and add in-line and clamp-on elements.
 ```bash
 mooring = moords.Mooring(df_database, name="M1") 
 
@@ -70,7 +70,7 @@ fig, ax = mooring.plot_design(label_rigging=True, line_ratio_plot=0.8)
 plt.show()
 ```
 
-Simulate mooring
+**Simulate mooring behavior:** define water flow conditions and run the simulation.
 ```bash
 water_height = 245
 z = np.linspace(0, water_height, 100)
