@@ -63,7 +63,7 @@ Please make sure your code follows the existing style and includes relevant test
 We use `unittest` for testing. Please ensure that any new code or features are accompanied by appropriate tests. You can run the tests locally using:
 
 ```bash
-python -m unittest discover
+python -m unittest discover tests
 ```
 
 ### Code Style
