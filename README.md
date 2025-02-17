@@ -1,5 +1,7 @@
 # MOORDS: Mooring Design and Simulation Package
 
+> **Note**: The moords package is currently in the early stages of development and should be used with caution. While the core features are functional, there may still be bugs and incomplete features. User feedback is welcome as the package evolves.
+
 The `moords` Python package provides advanced tools for the design, simulation, and visualization of mooring systems, made for oceanographic and marine engineering applications. It includes modules for designing mooring layouts, processing data, and simulation of the mooring in a flow. This package is specifically designed for fully submerged moorings.
 
 The simulation algorithm is based on the Mooring Design & Dynamics MATLAB package by Richard K. Dewey ([MoorDyn](https://web.uvic.ca/~rdewey/mooring/moordyn.php)), which has been translated to Python. 
@@ -27,7 +29,7 @@ pip install git+https://github.com/rdkreij/moords
 
 ## Getting started
 **Import required modules**
-```bash
+```python
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -36,7 +38,7 @@ import xarray as xr
 import moords
 ```
 **Define mooring element database:** create a dataframe of mooring elements with relevant properties.
-```bash
+```python
 columns = ["name", "type", "buoyancy_kg", "length_m", "width_m", "diameter_m", "drag", "material", "comment"]
 # Material index: 1: Steel, 2: Nylon, 3: Dacron, 4: Polyprop, 5: Polyethy, 6: Kevlar, 7: Aluminum, 8: Dyneema
 rows = [
@@ -50,7 +52,7 @@ rows = [
 df_database = pd.DataFrame(rows, columns=columns).set_index("name")
 ```
 **Build the mooring:** create a mooring system and add in-line and clamp-on elements.
-```bash
+```python
 mooring = moords.Mooring(df_database, name="M1") 
 
 # In-line elements
@@ -71,8 +73,8 @@ plt.show()
 ```
 
 **Simulate mooring behavior:** define water flow conditions and run the simulation.
-```bash
-water_height = 245
+```python
+water_height = 60
 z = np.linspace(0, water_height, 100)
 ds_flow_instance = xr.Dataset(
     {
