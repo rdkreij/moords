@@ -19,7 +19,7 @@ The simulation algorithm is based on the Mooring Design & Dynamics MATLAB packag
 - `output/`: contains outputs from the Jupyter notebooks, including printed tables, figures, and exported moorings for use in MATLAB.
 
 ## Installation
-To install the `moords` package, follow these steps:
+The `moords` package can be installed through pip:
 
 ```bash
 pip install git+https://github.com/rdkreij/moords
@@ -38,7 +38,7 @@ import moords
 Construct mooring element database 
 ```bash
 columns = ["name", "type", "buoyancy_kg", "length_m", "width_m", "diameter_m", "drag", "material", "comment"]
-# Material number: 1: Steel, 2: Nylon, 3: Dacron, 4: Polyprop, 5: Polyethy, 6: Kevlar, 7: Aluminum, 8: Dyneema
+# Material index: 1: Steel, 2: Nylon, 3: Dacron, 4: Polyprop, 5: Polyethy, 6: Kevlar, 7: Aluminum, 8: Dyneema
 rows = [
     ["3 Railway Wheels", "anchors", -1350.0, 0.55, 1.0, 0.0, 1.3, 1, ""],
     ["3/8 wire rope", "wires", -0.33, 1.0, 0.009, 0.0, 1.3, 1, ""],
@@ -51,22 +51,20 @@ df_database = pd.DataFrame(rows, columns=columns).set_index("name")
 ```
 Build the mooring
 ```bash
-mooring = moords.Mooring(df_database, name="M1") # Initialize mooring object
+mooring = moords.Mooring(df_database, name="M1") 
 
 # In-line elements
 mooring.add_inline("3 Railway Wheels")
 mooring.add_inline("3/8 wire rope", line_length=50, section="A")
 mooring.add_clampon_along_inline(
-    "Zn Anode (UWA)", height_along_inline=4
+    "Zn Anode", height_along_inline=4
 )  # attach clamp-on to latest in-line: 3/8 wire rope
 mooring.add_inline("41in ORE")
 
 # Add clamp-on elements by height (can be done after adding all in-line elements)
-mooring.add_clampon_by_height("FLNTUSB (UWA)", serial="2927", height=20)
-mooring.add_clampon_by_height("SBE39 T (UWA)", serial="3921", height=30)
-mooring.add_clampon_by_height("SBE39 T (UWA)", serial="4263", height=35)
-
-mooring.check_total_buoyancy() # Check the buoyancy of the mooring at the end
+mooring.add_clampon_by_height("FLNTUSB", serial="2927", height=20)
+mooring.add_clampon_by_height("SBE39 T", serial="3921", height=30)
+mooring.add_clampon_by_height("SBE39 T", serial="4263", height=35)
 
 fig, ax = mooring.plot_design(label_rigging=True, line_ratio_plot=0.8)
 plt.show()
@@ -78,7 +76,7 @@ water_height = 245
 z = np.linspace(0, water_height, 100)
 ds_flow_instance = xr.Dataset(
     {
-        "U": (["z"], z / bottom_depth),
+        "U": (["z"], z / water_height),
         "V": (["z"], np.zeros_like(z)),
         "W": (["z"], np.zeros_like(z)),
         "rho": (["z"], 1025 * np.ones_like(z)),
@@ -96,7 +94,8 @@ plt.show()
 
 To get started, we recommend following the step-by-step instructions provided in the `notebooks/design_example.ipynb` notebook. The general workflow is as follows:
 
-1. Initialize a mooring object: create a new mooring object and specify the path to the mooring element database (e.g., `data/mooring_elements/mooring_elements_data.csv`).
+1. Construct a mooring element database containing the properties (e.g. length, buoyancy) of the inline and clampon elements. This can be constructed manually or loaded from a `.csv` (e.g., `data/mooring_elements/mooring_elements_data.csv`).
+1. Initialize a mooring object: create a new mooring object and supply the mooring element database.
 2. Design the mooring: start from the bottom and add in-line elements in series. For clamp-on elements, define their height either along a specific element or along the entire mooring.
 3. Inspect the design: use dataframes and design plots to review and validate the completed mooring design.
 4. Generate reports: create an overview of the design, including serial numbers, and convert design figures into PDF format. Generate back-deck documents as PDFs for further documentation.
