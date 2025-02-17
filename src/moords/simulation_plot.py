@@ -1,6 +1,6 @@
 """Module to plot mooring simulation results"""
 
-import cmocean
+import matplotlib
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
@@ -66,10 +66,10 @@ def plot_flow_series(ds_flow_series):
     variables = [U, V, W, rho]
     labels = ["$U$ (m/s)", "$V$ (m/s)", "$W$ (m/s)", "$\\rho$ (kg/m$^3$)"]
     cmaps = [
-        cmocean.cm.balance,
-        cmocean.cm.balance,
-        cmocean.cm.balance,
-        cmocean.cm.haline,
+        matplotlib.cm.seismic,
+        matplotlib.cm.seismic,
+        matplotlib.cm.seismic,
+        matplotlib.cm.viridis,
     ]
     vmins = [vmin, vmin, vminW, None]
     vmaxs = [vmax, vmax, vmaxW, None]

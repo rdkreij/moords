@@ -21,7 +21,7 @@ def load_database_from_csv(path_csv: str) -> pd.DataFrame:
         "material": "float64",
         "comment": "str",
     }
-    df_database = pd.read_csv(path_csv, dtype=dtype_dict, na_values=None)
+    df_database = pd.read_csv(path_csv, dtype=dtype_dict, na_values=["None", ""])
     df_database["material"] = df_database["material"].astype("Int64")
     df_database["comment"] = df_database["comment"].replace(float("NaN"), "")
     df_database.set_index("name", inplace=True)
