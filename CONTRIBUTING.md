@@ -1,4 +1,4 @@
-# Contributing to `moords`
+# Contributing to MOORDS
 
 Thank you for considering contributing to the `moords` project! Contributions are welcome and appreciated. 
 
