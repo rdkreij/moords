@@ -25,7 +25,13 @@ The `moords` package can be installed through pip:
 
 ```bash
 pip install git+https://github.com/rdkreij/moords
-```
+``` 
+
+Alternative: set up a virtual environment using [Poetry](https://python-poetry.org/docs/) and run  
+```bash
+poetry install
+```  
+
 
 ## Getting started
 **Import required modules**
