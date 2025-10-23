@@ -175,6 +175,7 @@ def plot_design(
     ax.text(0, 1.02, mooring.name, va="bottom", ha="center")
 
     # Plot inline
+    flag_set_y = True
     for i in range(n_inline):
         # Plot shape
         if bool_line[i]:
@@ -209,8 +210,9 @@ def plot_design(
 
         # Add label
         if label_rigging or (type_inline[i] != "rigging"):
-            if i == 0:
+            if flag_set_y:
                 y_text = bottom_height_plot[i] + length_plot[i] / 2
+                flag_set_y = False
             else:
                 if (y_text + y_offset_text) >= (
                     bottom_height_plot[i] + length_plot[i] / 2
