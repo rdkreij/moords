@@ -88,6 +88,7 @@ def plot_design(
     type_inline = np.array([inline.type for inline in mooring.inline])
     name = np.array([inline.name for inline in mooring.inline])
     serial = np.array([inline.serial for inline in mooring.inline])
+    section = np.array([inline.section for inline in mooring.inline])
 
     # Compute additional variables
     n_inline = len(mooring.inline)
@@ -225,6 +226,8 @@ def plot_design(
             if show_serial:
                 if serial[i] is not None:
                     text = f"#{serial[i]} - {text}"
+            if section[i] is not None:
+                text = f"{section[i]} | {text}"
             ax.text(
                 x_offset_inline_text,
                 y_text,
