@@ -104,22 +104,24 @@ def plot_anchor_stats_series(ds_sim_series_interpolated):
     """Plot simulated anchor statistics as a function of time"""
     time = ds_sim_series_interpolated.time
     tension = ds_sim_series_interpolated.tension.isel(idx=0)
-    psi = ds_sim_series_interpolated.psi.isel(idx=0)
+    psi = ds_sim_series_interpolated.psi.isel(idx=1)
 
     tension_vertical = tension * np.cos(np.deg2rad(psi))
     tension_horizontal = tension * np.sin(np.deg2rad(psi))
     weight_under_anchor = ds_sim_series_interpolated.weight_under_anchor
 
-    fig, ax = plt.subplots(2, 1, figsize=(10, 5), sharex=True)
-    ax[0].plot(time, tension, "k--", zorder=10, label="total")
-    ax[0].plot(time, tension_vertical, "r-", label="vertical")
+    fig, ax = plt.subplots(3, 1, figsize=(10, 8), sharex=True)
     ax[0].plot(time, tension_horizontal, "b-", label="horizontal")
-    ax[1].plot(time, weight_under_anchor, "k-")
+    ax[1].plot(time, tension, "k--", zorder=10, label="total")
+    ax[1].plot(time, tension_vertical, "r-", label="vertical")
+    ax[2].plot(time, weight_under_anchor, "k-")
 
-    ax[1].xaxis.set_major_formatter(mdates.DateFormatter("%m-%d\n%H:%M"))
+    ax[2].xaxis.set_major_formatter(mdates.DateFormatter("%m-%d\n%H:%M"))
     ax[0].set(ylabel="load on\nanchor (kg)")
+    ax[1].set(ylabel="load on\nanchor (kg)")
     ax[0].legend(frameon=False)
-    ax[1].set(ylabel="weight under\nanchor (kg)", xlabel="$t$")
+    ax[1].legend(frameon=False)
+    ax[2].set(ylabel="weight under\nanchor (kg)", xlabel="$t$")
     return fig, ax
 
 
