@@ -238,6 +238,27 @@ files = [
 ]
 
 [[package]]
+name = "cmocean"
+version = "4.0.3"
+description = "Colormaps for Oceanography"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+markers = "python_version <= \"3.11\" or python_version >= \"3.12\""
+files = [
+    {file = "cmocean-4.0.3-py3-none-any.whl", hash = "sha256:f2fc1d5e349db122ee0c9eac80bba969aa92dd2806548fce58dc8bef962f309e"},
+    {file = "cmocean-4.0.3.tar.gz", hash = "sha256:37868399fb5f41b4eac596e69803f9bfaea49946514dfb2e7f48886854250d7c"},
+]
+
+[package.dependencies]
+matplotlib = "*"
+numpy = "*"
+packaging = "*"
+
+[package.extras]
+plots = ["colorspacious", "viscm"]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -1773,4 +1794,4 @@ viz = ["cartopy", "matplotlib", "nc-time-axis", "seaborn"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10"
-content-hash = "7971b83aa46de74b5a711b92da2f272d8b2fa04a54d87e0f38b1fa1fd134fd2b"
+content-hash = "6e636c678f1aef71e42c51b4321f09ac959c72e6285bec64099abe94dd0980f1"

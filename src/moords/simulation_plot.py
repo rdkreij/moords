@@ -1,6 +1,6 @@
 """Module to plot mooring simulation results"""
 
-import matplotlib
+import cmocean
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
@@ -46,10 +46,10 @@ def plot_flow_series(ds_flow_series):
     Plots flow series data including U, V, W velocity components and density (rho)
     """
     # Flip the data arrays for proper orientation
-    U = np.flip(ds_flow_series.U.values.T, axis=0)
-    V = np.flip(ds_flow_series.V.values.T, axis=0)
-    W = np.flip(ds_flow_series.W.values.T, axis=0)
-    rho = np.flip(ds_flow_series.rho.values.T, axis=0)
+    U = ds_flow_series.U.values.T
+    V = ds_flow_series.V.values.T
+    W = ds_flow_series.W.values.T
+    rho = ds_flow_series.rho.values.T
 
     z = ds_flow_series.z.values
     time = ds_flow_series.time.values
@@ -66,10 +66,10 @@ def plot_flow_series(ds_flow_series):
     variables = [U, V, W, rho]
     labels = ["$U$ (m/s)", "$V$ (m/s)", "$W$ (m/s)", "$\\rho$ (kg/m$^3$)"]
     cmaps = [
-        matplotlib.cm.seismic,
-        matplotlib.cm.seismic,
-        matplotlib.cm.seismic,
-        matplotlib.cm.viridis,
+        cmocean.cm.balance,  # type: ignore
+        cmocean.cm.balance,  # type: ignore
+        cmocean.cm.balance,  # type: ignore
+        cmocean.cm.haline,  # type: ignore
     ]
     vmins = [vmin, vmin, vminW, None]
     vmaxs = [vmax, vmax, vmaxW, None]
@@ -77,11 +77,11 @@ def plot_flow_series(ds_flow_series):
     for i, (var, label, cmap, vmin, vmax) in enumerate(
         zip(variables, labels, cmaps, vmins, vmaxs)
     ):
-        im = axes[i].imshow(
+        im = axes[i].pcolormesh(
+            time_numeric,
+            z,
             var,
-            aspect="auto",
             cmap=cmap,
-            extent=[time_numeric[0], time_numeric[-1], z[0], z[-1]],
             vmin=vmin,
             vmax=vmax,
         )
