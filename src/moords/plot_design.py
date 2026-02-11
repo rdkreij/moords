@@ -16,6 +16,8 @@ def plot_design(
     show_length=True,
     fontsize=6,
     line_ratio_plot=0.5,
+    figsize=(3, 10),
+    minimum_element_dim=0.2,
 ):
     """
     Plot the structure of a mooring system including inline elements and clamp-ons.
@@ -42,6 +44,10 @@ def plot_design(
     line_ratio_plot : float, optional
         Proportion of the plot height allocated to inline line elements (default is
         0.5).
+    figsize : tuple, optional
+        Figure size in inches (width, height) (default is (3, 10)).
+    minimum_element_dim : float, optional
+        Minimum dimension (width and length) for elements in the plot (default is 0.2).
 
     Returns
     -------
@@ -51,22 +57,23 @@ def plot_design(
         The matplotlib axes object for the plot.
     """
     # Set properties
-    minimum_element_width = 0.008
+    minimum_element_width = minimum_element_dim
     minimum_element_length = minimum_element_width
     minimum_line_length = 0.05
-    fig_width_in, fig_height_in = 3, 10
+    fig_width_in, fig_height_in = figsize
     text_height_in = fontsize / 72  # Approximate text height in inches
     relative_height = (
         text_height_in / fig_height_in
     )  # Text height relative to figure height
-    x_offset_inline_text = -0.10
+    factor = fig_width_in / fig_height_in * 3
+    x_offset_inline_text = -0.10 * factor
     y_offset_text = relative_height * 1.6
-    x_buffer_inline_text = 0.005
-    x_buffer_sub_text = 0.25
-    x_line_margin = 0.015
-    x_offset_clamp = 0.1
-    x_offset_clamp_space = 0.01
-    x_offset_clamp_text = 0.1
+    x_buffer_inline_text = 0.005 * factor
+    x_buffer_sub_text = 0.25 * factor
+    x_line_margin = 0.015 * factor
+    x_offset_clamp = 0.1 * factor
+    x_offset_clamp_space = 0.01 * factor
+    x_offset_clamp_text = 0.1 * factor
     x_buffer_clamp_text = x_buffer_inline_text
     color_dict = {
         "wires": "k",
@@ -77,6 +84,10 @@ def plot_design(
         "miscs": "g",
         "arcels": "b",
         "cms": "r",
+    }
+    line_style_dict = {
+        "wires": "-",
+        "chains": "--",
     }
 
     # Inline properties
@@ -110,6 +121,9 @@ def plot_design(
     partitions = line_length_plot / np.sum(line_length_plot)
     adjusted_partitions = calculate_partition_with_min(partitions, minimum_line_length)
     length_plot[bool_line] = adjusted_partitions * np.sum(line_length_plot)
+    length_plot[length < minimum_element_length] = (
+        minimum_element_length * non_line_factor
+    )
     top_height_plot = np.cumsum(length_plot)
     bottom_height_plot = np.cumsum(np.hstack([[0], length_plot[:-1]]))
 
@@ -117,13 +131,15 @@ def plot_design(
     width_plot = (
         bool_line * line_factor + np.logical_not(bool_line) * non_line_factor
     ) * width
-    width_plot[width_plot < minimum_element_width] = minimum_element_width
+    width_plot[width < minimum_element_width] = minimum_element_width * non_line_factor
 
     # Clampon properties
     heightco = []
     heightco_along_inline = []
     heightco_plot = []
+    lengthco = []
     lengthco_plot = []
+    widthco = []
     widthco_plot = []
     diameterco = []
     typeco = []
@@ -134,7 +150,9 @@ def plot_design(
         for clamp in clampons:
             ratio_clamp = clamp.height_along_inline / length[i]
             heightco_plot.append(bottom_height_plot[i] + ratio_clamp * length_plot[i])
+            lengthco.append(clamp.length)
             lengthco_plot.append(non_line_factor * clamp.length)
+            widthco.append(clamp.width)
             widthco_plot.append(non_line_factor * clamp.width)
             heightco.append(clamp.height)
             diameterco.append(clamp.diameter)
@@ -145,7 +163,9 @@ def plot_design(
     heightco_plot = np.array(heightco_plot)
     heightco = np.array(heightco)
     heightco_along_inline = np.array(heightco_along_inline)
+    lengthco = np.array(lengthco)
     lengthco_plot = np.array(lengthco_plot)
+    widthco = np.array(widthco)
     widthco_plot = np.array(widthco_plot)
     diameterco = np.array(diameterco)
     typeco = np.array(typeco)
@@ -154,8 +174,12 @@ def plot_design(
     bool_sphereco = diameterco > 0
 
     # Modify clampon plot dimensions
-    widthco_plot[widthco_plot < minimum_element_width] = minimum_element_width
-    lengthco_plot[lengthco_plot < minimum_element_length] = minimum_element_length
+    widthco_plot[widthco < minimum_element_width] = (
+        minimum_element_width * non_line_factor
+    )
+    lengthco_plot[lengthco < minimum_element_length] = (
+        minimum_element_length * non_line_factor
+    )
 
     x_positions_clamp = update_positions_no_overlap(
         heightco_plot, widthco_plot, lengthco_plot, x_offset_clamp, x_offset_clamp_space
@@ -173,7 +197,7 @@ def plot_design(
     # Create figure
     fig, ax = plt.subplots(figsize=(fig_width_in, fig_height_in))
     ax.set_aspect("equal")
-    ax.text(0, 1.02, mooring.name, va="bottom", ha="center")
+    ax.text(0, top_height_plot[-1], mooring.name, va="bottom", ha="center")
 
     # Plot inline
     flag_set_y = True
@@ -183,7 +207,7 @@ def plot_design(
             plt.plot(
                 [0, 0],
                 [bottom_height_plot[i], top_height_plot[i]],
-                "-",
+                line_style_dict.get(type_inline[i], "-"),
                 color=color_dict[type_inline[i]],
                 lw=2,
                 zorder=-2,
@@ -340,7 +364,6 @@ def plot_design(
         )
 
     ax.axis("off")
-
     return fig, ax
 
 

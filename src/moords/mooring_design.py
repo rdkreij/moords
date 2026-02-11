@@ -21,7 +21,7 @@ def load_database_from_csv(path_csv: str) -> pd.DataFrame:
         "material": "float64",
         "comment": "str",
     }
-    df_database = pd.read_csv(path_csv, dtype=dtype_dict, na_values=["None", ""])
+    df_database = pd.read_csv(path_csv, dtype=dtype_dict, na_values=None)
     df_database["material"] = df_database["material"].astype("Int64")
     df_database["comment"] = df_database["comment"].replace(float("NaN"), "")
     df_database.set_index("name", inplace=True)
@@ -575,6 +575,8 @@ class Mooring:
         show_length: bool = True,
         fontsize: int = 6,
         line_ratio_plot: float = 0.5,
+        figsize: tuple = (3, 10),
+        minimum_element_dim: float = 0.2,
     ):
         """
         Plot the structure of a mooring system including inline elements and clamp-ons.
@@ -601,6 +603,12 @@ class Mooring:
         line_ratio_plot : float, optional
             Proportion of the plot height allocated to inline line elements (default is
             0.5).
+        figsize : tuple, optional
+            Figure size in inches (width, height) (default is (3, 10)).
+        minimum_element_dim : float, optional
+            Minimum dimension (width and length) for elements in the plot (default is
+            0.2).
+
 
         Returns
         -------
@@ -617,4 +625,6 @@ class Mooring:
             show_length=show_length,
             fontsize=fontsize,
             line_ratio_plot=line_ratio_plot,
+            figsize=figsize,
+            minimum_element_dim=minimum_element_dim,
         )
