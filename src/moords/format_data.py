@@ -38,6 +38,8 @@ def format_array(arr, format_str="{}") -> list:
     for item in arr:
         if item is None:
             formatted.append("")
+        elif isinstance(item, float) and pd.isna(item):
+            formatted.append("")
         else:
             formatted.append(format_str.format(item))
     return formatted

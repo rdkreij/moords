@@ -8,6 +8,47 @@ import pandas as pd
 from moords.plot_design import plot_design
 
 
+def format_call(func_name, **kwargs):
+    return "{}({})".format(
+        func_name,
+        ", ".join(f"{k}={format_value(v)}" for k, v in kwargs.items()),
+    )
+
+
+def format_value(v):
+    if isinstance(v, float):
+        # remove floating point noise
+        return format(v, ".6f").rstrip("0").rstrip(".")
+    return repr(v)
+
+
+# def auto_record_call(func):
+#     @wraps(func)
+#     def wrapper(self, *args, **kwargs):
+#         sig = inspect.signature(func)
+#         bound = sig.bind(self, *args, **kwargs)
+#         bound.apply_defaults()
+
+#         params = {}
+
+#         for name, value in bound.arguments.items():
+#             if name == "self":
+#                 continue
+
+#             default = sig.parameters[name].default
+
+#             # Only store if value differs from default
+#             if default is inspect.Parameter.empty or value != default:
+#                 params[name] = value
+
+#         command = format_call(func.__name__, **params)
+#         self.commands.append(command)
+
+#         return func(self, *args, **kwargs)
+
+#     return wrapper
+
+
 def load_database_from_csv(path_csv: str) -> pd.DataFrame:
     """load mooring database from csv file"""
     dtype_dict = {
@@ -98,20 +139,23 @@ class ClampOn:
         "id",
         "passive_weight",
         "passive_drag",
+        "clamped_with",
     ]
 
     def __init__(
         self,
         df_database: pd.DataFrame,
         name: str,
-        serial: str = None,
-        passive_weight=False,
-        passive_drag=False,
+        serial: str | None = None,
+        passive_weight: bool = False,
+        passive_drag: bool = False,
+        clamped_with: str | None = None,
     ) -> None:
         self.name = name
         self.serial = serial
         self.passive_weight = passive_weight
         self.passive_drag = passive_drag
+        self.clamped_with = clamped_with
 
         # Retrieve properties from the mooring database
         prop = get_property_database(
@@ -159,6 +203,7 @@ class ClampOn:
             f"l={self.length},"
             f"h={self.height},"
             f"clamped_to={self.clamped_to_name})"
+            f"clamped_with={self.clamped_with},"
         )
 
 
@@ -305,13 +350,14 @@ class InLine:
 class Mooring:
     """Class of mooring object."""
 
-    def __init__(self, df_database: pd.DataFrame, name: str = ""):
+    def __init__(self, df_database: pd.DataFrame, name: str = "") -> None:
         self.df_database = df_database
         self.name = name
 
         # Default attributes for mooring configuration
         self.inline = []
         self.id_track = -1  # id assigning to inline and clampons
+        # self.commands = []
 
     @property
     def num_inline(self):
@@ -326,6 +372,7 @@ class Mooring:
                 string.append(f"{clamp}")
         return "\n".join(string)
 
+    # @auto_record_call
     def add_inline(
         self,
         name: str,
@@ -334,6 +381,16 @@ class Mooring:
         section: str = None,
     ) -> None:
         """Add an inline element to mooring."""
+        # if self.print_command:
+        #     print(
+        #         format_call(
+        #             "add_inline",
+        #             name=name,
+        #             line_length=line_length,
+        #             serial=serial,
+        #             section=section,
+        #         )
+        #     )
         new_inline = InLine(self.df_database, name, line_length, serial, section)
 
         if self.num_inline == 0:
@@ -349,6 +406,7 @@ class Mooring:
 
         self.inline.append(new_inline)
 
+    # @auto_record_call
     def add_clampon_along_inline(
         self,
         name: str,
@@ -356,6 +414,7 @@ class Mooring:
         serial: str = None,
         passive_weight: bool = False,
         passive_drag: bool = False,
+        clamped_with: str | None = None,
     ) -> None:
         """Add clampon along in-line element."""
         new_clampon = ClampOn(
@@ -364,6 +423,7 @@ class Mooring:
             serial,
             passive_weight,
             passive_drag,
+            clamped_with,
         )
         new_clampon.height_along_inline = height_along_inline
         target_inline = self.inline[-1]
@@ -406,13 +466,15 @@ class Mooring:
         if flag:
             print("Buoyancy check succesful")
 
+    # @auto_record_call
     def add_clampon_by_height(
         self,
         name: str,
         height: float,
-        serial: str = None,
+        serial: str | None = None,
         passive_weight: bool = False,
         passive_drag: bool = False,
+        clamped_with: str | None = None,
     ) -> None:
         """Add clampon by height."""
         new_clampon = ClampOn(
@@ -421,6 +483,7 @@ class Mooring:
             serial,
             passive_weight,
             passive_drag,
+            clamped_with,
         )
         new_clampon.height = height
 
@@ -570,7 +633,7 @@ class Mooring:
     def plot_design(
         self,
         label_rigging: bool = True,
-        drop_strings: bool = None,
+        drop_strings: list[str] | str | None = None,
         show_serial: bool = True,
         show_length: bool = True,
         fontsize: int = 6,
@@ -628,3 +691,38 @@ class Mooring:
             figsize=figsize,
             minimum_element_dim=minimum_element_dim,
         )
+
+    def print_commands(self, mooring_name: str = None):
+        if mooring_name is None:
+            mooring_name = self.name
+
+        command_list = []
+
+        for inline in self.inline:
+            command = f"{mooring_name}.add_inline(name='{inline.name}'"
+            if inline.bool_line:
+                command += f", line_length={format_value(inline.length)}"
+
+            if inline.serial is not None:
+                command += f", serial='{inline.serial}'"
+
+            if inline.section is not None:
+                command += f", section='{inline.section}'"
+            command += ")"
+            command_list.append(command)
+
+            for co in inline.clamp_ons:
+                command = f"{mooring_name}.add_clampon_along_inline(name='{co.name}'"
+                command += (
+                    f", height_along_inline={format_value(co.height_along_inline)}"
+                )
+                if co.serial is not None:
+                    command += f", serial='{co.serial}'"
+                if co.passive_weight:
+                    command += ", passive_weight=True"
+                if co.passive_drag:
+                    command += ", passive_drag=True"
+                command += ")"
+
+                command_list.append(command)
+        print("\n".join(command_list))

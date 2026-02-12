@@ -14,6 +14,7 @@ def plot_design(
     drop_strings=None,
     show_serial=True,
     show_length=True,
+    show_clamped_with=True,
     fontsize=6,
     line_ratio_plot=0.5,
     figsize=(3, 10),
@@ -36,6 +37,8 @@ def plot_design(
         Strings to be removed from element names for display (default is None).
     show_serial : bool, optional
         Whether to display serial numbers of components (default is True).
+    show_clamped_with : bool, optional
+        Whether to display how the clamp-ons are clamped (default is True).
     show_length : bool, optional
         Whether to display the lengths or vertical positions of components (default is
         True).
@@ -145,6 +148,7 @@ def plot_design(
     typeco = []
     nameco = []
     serialco = []
+    clamped_withco = []
     for i in range(n_inline):
         clampons = mooring.inline[i].clamp_ons
         for clamp in clampons:
@@ -160,6 +164,7 @@ def plot_design(
             typeco.append(clamp.type)
             nameco.append(clamp.name)
             serialco.append(clamp.serial)
+            clamped_withco.append(clamp.clamped_with)
     heightco_plot = np.array(heightco_plot)
     heightco = np.array(heightco)
     heightco_along_inline = np.array(heightco_along_inline)
@@ -331,6 +336,9 @@ def plot_design(
         if show_serial:
             if serialco[j] is not None:
                 text = f"{text} #{serialco[j]}"
+        if show_clamped_with:
+            if clamped_withco[j] is not None:
+                text = f"{text} [{clamped_withco[j]}]"
         ax.text(
             x_offset_clamp + x_offset_clamp_text,
             y_text,

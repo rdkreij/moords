@@ -85,6 +85,11 @@ def generate_latex_summary(df: pd.DataFrame, header: str = None) -> str:
         )
         latex_str += df_to_latex_table(df_clampon_summary, caption, rows_max)
 
+        df_clamp_with_summary, caption = overview_tools.make_df_clamp_with_summary(
+            df, mooring
+        )
+        latex_str += df_to_latex_table(df_clamp_with_summary, caption, rows_max)
+
         df_assembly, caption = overview_tools.make_df_assambly(df, mooring)
         latex_str += df_to_latex_table(df_assembly, caption, rows_max)
 
@@ -93,6 +98,11 @@ def generate_latex_summary(df: pd.DataFrame, header: str = None) -> str:
 
     df_count_all, caption = overview_tools.make_df_count_all(df)
     latex_str += df_to_latex_table(df_count_all, caption, rows_max)
+
+    df_count_clamped_with_all, caption = overview_tools.make_df_count_clamped_with_all(
+        df
+    )
+    latex_str += df_to_latex_table(df_count_clamped_with_all, caption, rows_max)
 
     df_simple_section_sum, caption = overview_tools.make_df_simple_section_sum(df)
     latex_str += df_to_latex_table(df_simple_section_sum, caption, rows_max)
