@@ -21,8 +21,8 @@ class Overview:
     def generate_overview_pdf(
         self,
         file_path: str = "",
-        header: str = None,
-        replacements: list[tuple[str]] = None,
+        header: str | None = None,
+        replacements: list[tuple[str, str]] | None = None,
     ) -> None:
         """Generate mooring design summary in pdf using latex."""
         overview_to_pdf.generate_overview_pdf(

@@ -1,6 +1,5 @@
 """Module to generate mooring design summary in pdf."""
 
-import math
 import os
 
 import pandas as pd
@@ -11,51 +10,37 @@ import moords.overview_tools as overview_tools
 
 def df_to_latex_table(df: pd.DataFrame, caption: str, rows_max: int = 55) -> str:
     """Dataframe to latex table."""
+    max_len_array = [df[col].astype(str).str.len().max() for col in df.columns]
+    sum_max_len = sum(max_len_array)
 
-    # Determine the number of parts
-    num_parts = math.ceil(len(df) / rows_max)
+    num_rows, _ = df.shape
+
+    col_specs = ["|"]
+    if sum_max_len <= 70:
+        col_specs.extend(["l|"] * len(df.columns))
+    else:
+        for col in df.columns:
+            max_len = df[col].astype(str).str.len().max()
+            if max_len > 15:
+                col_specs.append("X|")
+            else:
+                col_specs.append("l|")
 
     latex_str = ""
-
-    for part in range(num_parts):
-        # Start building the LaTeX string for each part
-        latex_str += r"\begin{table}[!htbp]" + "\n"
-        latex_str += r"\centering" + "\n"
-
-        # Adjust the caption based on the number of parts
-        if num_parts == 1:
-            latex_str += r"\caption{" + caption + "}" + "\n"
-        else:
-            latex_str += (
-                r"\caption{"
-                + caption
-                + f" (Part {part + 1} of {num_parts})"
-                + "}"
-                + "\n"
-            )
-
-        # Make table
-        latex_str += r"\begin{tabular}{" + "l" * len(df.columns) + "}" + "\n"
-        latex_str += r"\toprule" + "\n"
-        latex_str += " & ".join(df.columns) + r" \\" + "\n"
-        latex_str += r"\midrule" + "\n"
-
-        # Get the specific rows for this part
-        start_row = part * rows_max
-        end_row = min((part + 1) * rows_max, len(df))
-        df_part = df.iloc[start_row:end_row]
-
-        for _, row in df_part.iterrows():
-            latex_str += " & ".join(map(str, row.values)) + r" \\" + "\n"
-
-        latex_str += r"\bottomrule" + "\n"
-        latex_str += r"\end{tabular}" + "\n"
-        latex_str += r"\end{table}" + "\n\n"
+    latex_str += r"\Needspace{" + str(int(num_rows + 5)) + r"\baselineskip}" + "\n"
+    latex_str += r"\begin{tabularx}{\linewidth}{" + "".join(col_specs) + "}" + "\n"
+    latex_str += r"\caption{" + caption + r"}\\" + "\n"
+    latex_str += r"\hline" + "\n"
+    latex_str += " & ".join([rf"\textbf{{{i}}}" for i in df.columns]) + r" \\" + "\n"
+    latex_str += r"\hline" + "\n"
+    for _, row in df.iterrows():
+        latex_str += " & ".join(map(str, row.values)) + r" \\ \hline" + "\n"
+    latex_str += r"\end{tabularx}" + "\n"
 
     return latex_str
 
 
-def generate_latex_summary(df: pd.DataFrame, header: str = None) -> str:
+def generate_latex_summary(df: pd.DataFrame, header: str | None = None) -> str:
     """Genrate latex summary of mooring design in design."""
     rows_max = 55
     moorings = df["mooring"].unique()
@@ -64,8 +49,11 @@ def generate_latex_summary(df: pd.DataFrame, header: str = None) -> str:
 
     # Configure latex document
     latex_str += r"\documentclass{article}" + "\n"
-    latex_str += r"\usepackage{tabularx}" + "\n"
+    latex_str += r"\usepackage{ltablex}" + "\n"
+    latex_str += r"\keepXColumns" + "\n"
+    latex_str += r"\usepackage{needspace}" + "\n"
     latex_str += r"\usepackage{booktabs}" + "\n"
+    latex_str += r"\usepackage[table]{xcolor}" + "\n"
     latex_str += r"\usepackage[margin=.5in]{geometry}" + "\n"
     if header is not None:
         latex_str += r"\usepackage{fancyhdr}" + "\n"
@@ -73,6 +61,7 @@ def generate_latex_summary(df: pd.DataFrame, header: str = None) -> str:
         latex_str += r"\renewcommand{\headrulewidth}{0pt}" + "\n"
         latex_str += r"\fancyhead[C]{" + f"{header}" + r"}" + "\n"
     latex_str += r"\begin{document}" + "\n\n"
+    latex_str += r"\arrayrulecolor[gray]{0.7}" + "\n"
 
     for mooring in moorings:
         df_element_summary, caption = overview_tools.make_df_element_summary(
@@ -118,8 +107,8 @@ def generate_latex_summary(df: pd.DataFrame, header: str = None) -> str:
 def generate_overview_pdf(
     df: pd.DataFrame,
     file_path: str = "",
-    header: str = None,
-    replacements: str | list[str] = None,
+    header: str | None = None,
+    replacements: list[tuple[str, str]] | None = None,
 ):
     """Generate mooring design summary in pdf using latex."""
 

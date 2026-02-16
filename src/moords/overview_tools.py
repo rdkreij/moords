@@ -185,6 +185,9 @@ def make_df_count_all(df) -> tuple[pd.DataFrame, str]:
     count_df = df.groupby(["name", "mooring"]).size().unstack(fill_value=0)
     count_df["Total"] = count_df.sum(axis=1)
     df_count_all = count_df.reset_index()
+    # turn into string with no decimals
+    for col in df_count_all.columns[1:]:
+        df_count_all[col] = df_count_all[col].apply(lambda x: f"{x:.0f}")
     df_count_all.rename(columns={"name": "Name"}, inplace=True)
     info = "All : Total count of each element"
     return (df_count_all, info)
