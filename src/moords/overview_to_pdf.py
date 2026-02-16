@@ -8,7 +8,7 @@ import moords.format_data as format_data
 import moords.overview_tools as overview_tools
 
 
-def df_to_latex_table(df: pd.DataFrame, caption: str, rows_max: int = 55) -> str:
+def df_to_latex_table(df: pd.DataFrame, caption: str, new_page: bool = False) -> str:
     """Dataframe to latex table."""
     max_len_array = [df[col].astype(str).str.len().max() for col in df.columns]
     sum_max_len = sum(max_len_array)
@@ -27,7 +27,10 @@ def df_to_latex_table(df: pd.DataFrame, caption: str, rows_max: int = 55) -> str
                 col_specs.append("l|")
 
     latex_str = ""
-    latex_str += r"\Needspace{" + str(int(num_rows + 5)) + r"\baselineskip}" + "\n"
+    if new_page:
+        latex_str += r"\newpage" + "\n"
+    else:
+        latex_str += r"\Needspace{" + str(int(num_rows + 5)) + r"\baselineskip}" + "\n"
     latex_str += r"\begin{tabularx}{\linewidth}{" + "".join(col_specs) + "}" + "\n"
     latex_str += r"\caption{" + caption + r"}\\" + "\n"
     latex_str += r"\hline" + "\n"
@@ -40,9 +43,10 @@ def df_to_latex_table(df: pd.DataFrame, caption: str, rows_max: int = 55) -> str
     return latex_str
 
 
-def generate_latex_summary(df: pd.DataFrame, header: str | None = None) -> str:
+def generate_latex_summary(
+    df: pd.DataFrame, header: str | None = None, new_page: bool = False
+) -> str:
     """Genrate latex summary of mooring design in design."""
-    rows_max = 55
     moorings = df["mooring"].unique()
 
     latex_str = ""
@@ -67,38 +71,42 @@ def generate_latex_summary(df: pd.DataFrame, header: str | None = None) -> str:
         df_element_summary, caption = overview_tools.make_df_element_summary(
             df, mooring
         )
-        latex_str += df_to_latex_table(df_element_summary, caption, rows_max)
+        latex_str += df_to_latex_table(df_element_summary, caption, new_page=new_page)
 
         df_clampon_summary, caption = overview_tools.make_df_clampon_summary(
             df, mooring
         )
-        latex_str += df_to_latex_table(df_clampon_summary, caption, rows_max)
+        latex_str += df_to_latex_table(df_clampon_summary, caption, new_page=new_page)
 
         df_clamp_with_summary, caption = overview_tools.make_df_clamp_with_summary(
             df, mooring
         )
-        latex_str += df_to_latex_table(df_clamp_with_summary, caption, rows_max)
+        latex_str += df_to_latex_table(
+            df_clamp_with_summary, caption, new_page=new_page
+        )
 
         df_assembly, caption = overview_tools.make_df_assambly(df, mooring)
-        latex_str += df_to_latex_table(df_assembly, caption, rows_max)
+        latex_str += df_to_latex_table(df_assembly, caption, new_page=new_page)
 
     df_summary_element_all, caption = overview_tools.make_df_summary_element_all(df)
-    latex_str += df_to_latex_table(df_summary_element_all, caption, rows_max)
+    latex_str += df_to_latex_table(df_summary_element_all, caption, new_page=new_page)
 
     df_count_all, caption = overview_tools.make_df_count_all(df)
-    latex_str += df_to_latex_table(df_count_all, caption, rows_max)
+    latex_str += df_to_latex_table(df_count_all, caption, new_page=new_page)
 
     df_count_clamped_with_all, caption = overview_tools.make_df_count_clamped_with_all(
         df
     )
-    latex_str += df_to_latex_table(df_count_clamped_with_all, caption, rows_max)
+    latex_str += df_to_latex_table(
+        df_count_clamped_with_all, caption, new_page=new_page
+    )
 
     df_simple_section_sum, caption = overview_tools.make_df_simple_section_sum(df)
-    latex_str += df_to_latex_table(df_simple_section_sum, caption, rows_max)
+    latex_str += df_to_latex_table(df_simple_section_sum, caption, new_page=new_page)
 
     df_list, info_list = overview_tools.make_df_list_section_all(df)
     for idx, df_i in enumerate(df_list):
-        latex_str += df_to_latex_table(df_i, info_list[idx], rows_max)
+        latex_str += df_to_latex_table(df_i, info_list[idx], new_page=new_page)
 
     latex_str += r"\end{document}"
     return latex_str
@@ -109,6 +117,7 @@ def generate_overview_pdf(
     file_path: str = "",
     header: str | None = None,
     replacements: list[tuple[str, str]] | None = None,
+    new_page: bool = False,
 ):
     """Generate mooring design summary in pdf using latex."""
 
@@ -122,7 +131,7 @@ def generate_overview_pdf(
         df = format_data.replace_in_df(df, replacements)
     df = format_data.remove_trailing_spaces_in_df(df)
 
-    latex_str = generate_latex_summary(df, header)
+    latex_str = generate_latex_summary(df, header, new_page=new_page)
 
     tex_file_path = f"{file_dir}/{file_name}.tex"
 

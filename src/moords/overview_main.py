@@ -23,6 +23,7 @@ class Overview:
         file_path: str = "",
         header: str | None = None,
         replacements: list[tuple[str, str]] | None = None,
+        new_page: bool = False,
     ) -> None:
         """Generate mooring design summary in pdf using latex."""
         overview_to_pdf.generate_overview_pdf(
@@ -30,6 +31,7 @@ class Overview:
             file_path=file_path,
             header=header,
             replacements=replacements,
+            new_page=new_page,
         )
 
     def print_duplicated_serial(self) -> None:
