@@ -636,6 +636,7 @@ class Mooring:
         drop_strings: list[str] | str | None = None,
         show_serial: bool = True,
         show_length: bool = True,
+        show_clamped_with: bool = True,
         fontsize: int = 6,
         line_ratio_plot: float = 0.5,
         figsize: tuple = (3, 10),
@@ -661,6 +662,9 @@ class Mooring:
         show_length : bool, optional
             Whether to display the lengths or vertical positions of components (default
             is True).
+        show_clamped_with : bool, optional
+            Whether to display the "clamped with" information for clamp-ons (default is
+            True).
         fontsize : int, optional
             Font size for labels in the plot (default is 6).
         line_ratio_plot : float, optional
@@ -686,6 +690,7 @@ class Mooring:
             drop_strings=drop_strings,
             show_serial=show_serial,
             show_length=show_length,
+            show_clamped_with=show_clamped_with,
             fontsize=fontsize,
             line_ratio_plot=line_ratio_plot,
             figsize=figsize,
