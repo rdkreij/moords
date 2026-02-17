@@ -292,6 +292,7 @@ def make_df_summary_element_all(df: pd.DataFrame) -> tuple[pd.DataFrame, str]:
     dfc = df.loc[idx_instruments]
 
     unique_elem = dfc["name"].unique()
+    unique_elem = sorted(unique_elem)
 
     list_collect = []
     for elem in unique_elem:

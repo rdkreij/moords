@@ -24,10 +24,24 @@ class Overview:
         header: str | None = None,
         replacements: list[tuple[str, str]] | None = None,
         new_page: bool = False,
+        show_color: bool = True,
     ) -> None:
         """Generate mooring design summary in pdf using latex."""
+        df_combined_moorings = self.df_combined_moorings.copy()
+
+        if show_color:
+            color_dict = {
+                mooring.name: mooring.color
+                for mooring in self.moorings
+                if mooring.color is not None
+            }
+            for mooring, color in color_dict.items():
+                df_combined_moorings.loc[
+                    df_combined_moorings["mooring"] == mooring, "mooring"
+                ] = mooring + rf" \textcolor{{{color}}}{{$\blacksquare$}}"
+
         overview_to_pdf.generate_overview_pdf(
-            df=self.df_combined_moorings,
+            df=df_combined_moorings,
             file_path=file_path,
             header=header,
             replacements=replacements,

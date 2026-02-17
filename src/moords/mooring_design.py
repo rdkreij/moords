@@ -235,9 +235,9 @@ class InLine:
         self,
         df_database: pd.DataFrame,
         name: str,
-        line_length: float = None,
-        serial: str = None,
-        section: str = None,
+        line_length: float | None = None,
+        serial: str | None = None,
+        section: str | None = None,
     ) -> None:
         self.name = name
         self.serial = serial
@@ -350,9 +350,12 @@ class InLine:
 class Mooring:
     """Class of mooring object."""
 
-    def __init__(self, df_database: pd.DataFrame, name: str = "") -> None:
+    def __init__(
+        self, df_database: pd.DataFrame, name: str = "", color: str | None = None
+    ) -> None:
         self.df_database = df_database
         self.name = name
+        self.color = color
 
         # Default attributes for mooring configuration
         self.inline = []
@@ -376,9 +379,9 @@ class Mooring:
     def add_inline(
         self,
         name: str,
-        line_length: float = None,
-        serial: str = None,
-        section: str = None,
+        line_length: float | None = None,
+        serial: str | None = None,
+        section: str | None = None,
     ) -> None:
         """Add an inline element to mooring."""
         # if self.print_command:
@@ -411,7 +414,7 @@ class Mooring:
         self,
         name: str,
         height_along_inline: float,
-        serial: str = None,
+        serial: str | None = None,
         passive_weight: bool = False,
         passive_drag: bool = False,
         clamped_with: str | None = None,
@@ -641,6 +644,7 @@ class Mooring:
         line_ratio_plot: float = 0.5,
         figsize: tuple = (3, 10),
         minimum_element_dim: float = 0.2,
+        show_color: bool = True,
     ):
         """
         Plot the structure of a mooring system including inline elements and clamp-ons.
@@ -675,6 +679,8 @@ class Mooring:
         minimum_element_dim : float, optional
             Minimum dimension (width and length) for elements in the plot (default is
             0.2).
+        show_color : bool, optional
+            Whether to color-code mooring
 
 
         Returns
@@ -695,9 +701,10 @@ class Mooring:
             line_ratio_plot=line_ratio_plot,
             figsize=figsize,
             minimum_element_dim=minimum_element_dim,
+            show_color=show_color,
         )
 
-    def print_commands(self, mooring_name: str = None):
+    def print_commands(self, mooring_name: str | None = None):
         if mooring_name is None:
             mooring_name = self.name
 

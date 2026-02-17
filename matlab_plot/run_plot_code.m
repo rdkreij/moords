@@ -9,13 +9,14 @@ fprintf('RUNNING PLOT DESIGN\n')
 fprintf('Loading design')
 
 % Load .csv files exported from python
-% dir = "../output/fieldwork/export/"; 
+dir = "../output/fieldwork/export/"; 
 % mnames = ["W310","N280","S245","L245"]; % file names of exported .csv
-% version_name = "fieldwork"; % version name used to save plots
+mnames = ["L245"]; % file names of exported .csv
+version_name = "fieldwork"; % version name used to save plots
 
-dir = "../output/example/export/"; 
-mnames = ["M1","M2"]; % file names of exported .csv
-version_name = "example"; % version name used to save plots
+% dir = "../output/example/export/"; 
+% mnames = ["M1","M2"]; % file names of exported .csv
+% version_name = "example"; % version name used to save plots
 
 msave  = struct(); % allocate structure
 for mooring_name = mnames
@@ -87,13 +88,14 @@ for mooring_name = mnames
         P = PlotLayout(fh, [1 pw-2 1], [1 ph-2 1]);
     
         ah = axes('position', P{1});
-        plot_static_python(data, ah, fh, 'W310', 'cable_scale', cable_scale)
+        plot_static_python(data, ah, fh, mooring_name, 'cable_scale', cable_scale)
         ylim(xlim)
         set(gca, 'clipping', 'off')
         switch mooring_name
             case {'W310'}
-                zl = [18, 48];
-                titlez = 46;
+                % zl = [18, 48];
+                zl = [10, 35];
+                titlez = 48;
             case {'N280'}
                 zl = [18, 55];
                 titlez = 40;
@@ -104,7 +106,7 @@ for mooring_name = mnames
                 zl = [14, 51];
                 titlez = 36;
         end
-        zlim(zl)
+        % zlim(zl)
         xl = xlim;
         text(mean(xl), 0, titlez, mname_l, 'fontsize', 10, VerticalAlignment='top', HorizontalAlignment='center')
         fol = ['./' +paper_size +'figures/' +char(version_name) +'/'];
@@ -123,7 +125,7 @@ for mooring_name = mnames
             ylim(xlim)
             set(gca, 'clipping', 'off')
             
-            zlim(zl)
+            % zlim(zl)
             xl = xlim;
             text(mean(xl), 0, titlez, mname_l, 'fontsize', 10, VerticalAlignment='top', HorizontalAlignment='center')
 

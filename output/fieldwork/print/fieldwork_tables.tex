@@ -4,6 +4,8 @@
 \usepackage{needspace}
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{amssymb}
 \usepackage[margin=.5in]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -14,7 +16,7 @@
 \arrayrulecolor[gray]{0.7}
 \Needspace{37\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{W310: Element summary}\\
+\caption{W310 \textcolor{blue}{$\blacksquare$}: Element summary}\\
 \hline
 \textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} \\
 \hline
@@ -53,7 +55,7 @@ Zn Anode & 4 &  & -0.1 \\ \hline
 \end{tabularx}
 \Needspace{46\baselineskip}
 \begin{tabularx}{\linewidth}{|X|l|l|X|l|l|l|}
-\caption{W310: Clamp-on summary}\\
+\caption{W310 \textcolor{blue}{$\blacksquare$}: Clamp-on summary}\\
 \hline
 \textbf{Name} & \textbf{Serial} & \textbf{H[m]} & \textbf{Clamped to} & \textbf{Clamped with} & \textbf{Section} & \textbf{Inline H[m]} \\
 \hline
@@ -101,14 +103,14 @@ Sercel & 126989 & 297.3 & Sercel+frame &  &  & 0.4 \\ \hline
 \end{tabularx}
 \Needspace{5\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|}
-\caption{W310: Clamped with summary}\\
+\caption{W310 \textcolor{blue}{$\blacksquare$}: Clamped with summary}\\
 \hline
 \textbf{Clamp-on} & \textbf{Clamped with} & \textbf{Qty} \\
 \hline
 \end{tabularx}
 \Needspace{90\baselineskip}
 \begin{tabularx}{\linewidth}{|X|X|l|l|l|X|}
-\caption{W310: Assembly summary}\\
+\caption{W310 \textcolor{blue}{$\blacksquare$}: Assembly summary}\\
 \hline
 \textbf{Element} & \textbf{Serial} & \textbf{Length [m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height [in ASB]} \\
 \hline
@@ -200,7 +202,7 @@ Sercel & 126989 &  &  &  & 297.3 [0.4 m AE] \\ \hline
 \end{tabularx}
 \Needspace{29\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{N280: Element summary}\\
+\caption{N280 \textcolor{red}{$\blacksquare$}: Element summary}\\
 \hline
 \textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} \\
 \hline
@@ -231,7 +233,7 @@ Zn Anode & 2 &  & -0.1 \\ \hline
 \end{tabularx}
 \Needspace{39\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|X|l|l|l|}
-\caption{N280: Clamp-on summary}\\
+\caption{N280 \textcolor{red}{$\blacksquare$}: Clamp-on summary}\\
 \hline
 \textbf{Name} & \textbf{Serial} & \textbf{H[m]} & \textbf{Clamped to} & \textbf{Clamped with} & \textbf{Section} & \textbf{Inline H[m]} \\
 \hline
@@ -272,14 +274,14 @@ Sercel & 126991 & 266.9 & Sercel+frame &  &  & 0.4 \\ \hline
 \end{tabularx}
 \Needspace{5\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|}
-\caption{N280: Clamped with summary}\\
+\caption{N280 \textcolor{red}{$\blacksquare$}: Clamped with summary}\\
 \hline
 \textbf{Clamp-on} & \textbf{Clamped with} & \textbf{Qty} \\
 \hline
 \end{tabularx}
 \Needspace{71\baselineskip}
 \begin{tabularx}{\linewidth}{|X|X|l|l|l|X|}
-\caption{N280: Assembly summary}\\
+\caption{N280 \textcolor{red}{$\blacksquare$}: Assembly summary}\\
 \hline
 \textbf{Element} & \textbf{Serial} & \textbf{Length [m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height [in ASB]} \\
 \hline
@@ -352,7 +354,7 @@ Sercel & 126991 &  &  &  & 266.9 [0.4 m AE] \\ \hline
 \end{tabularx}
 \Needspace{34\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{S245: Element summary}\\
+\caption{S245 \textcolor{green}{$\blacksquare$}: Element summary}\\
 \hline
 \textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} \\
 \hline
@@ -388,7 +390,7 @@ uSquid & 1 &  & 0.0 \\ \hline
 \end{tabularx}
 \Needspace{55\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|X|l|l|l|}
-\caption{S245: Clamp-on summary}\\
+\caption{S245 \textcolor{green}{$\blacksquare$}: Clamp-on summary}\\
 \hline
 \textbf{Name} & \textbf{Serial} & \textbf{H[m]} & \textbf{Clamped to} & \textbf{Clamped with} & \textbf{Section} & \textbf{Inline H[m]} \\
 \hline
@@ -445,14 +447,14 @@ SBE56 T & 7342 & 228.7 & 6mm AmSteel &  & E & 0.4 \\ \hline
 \end{tabularx}
 \Needspace{5\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|}
-\caption{S245: Clamped with summary}\\
+\caption{S245 \textcolor{green}{$\blacksquare$}: Clamped with summary}\\
 \hline
 \textbf{Clamp-on} & \textbf{Clamped with} & \textbf{Qty} \\
 \hline
 \end{tabularx}
 \Needspace{105\baselineskip}
 \begin{tabularx}{\linewidth}{|X|X|l|l|l|X|}
-\caption{S245: Assembly summary}\\
+\caption{S245 \textcolor{green}{$\blacksquare$}: Assembly summary}\\
 \hline
 \textbf{Element} & \textbf{Serial} & \textbf{Length [m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height [in ASB]} \\
 \hline
@@ -559,7 +561,7 @@ SBE56 T & 7342 &  & E &  & 228.7 [0.4 m AE] \\ \hline
 \end{tabularx}
 \Needspace{19\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{L245: Element summary}\\
+\caption{L245 \textcolor{orange}{$\blacksquare$}: Element summary}\\
 \hline
 \textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} \\
 \hline
@@ -580,7 +582,7 @@ popup buoy & 2 &  & 20.0 \\ \hline
 \end{tabularx}
 \Needspace{19\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
-\caption{L245: Clamp-on summary}\\
+\caption{L245 \textcolor{orange}{$\blacksquare$}: Clamp-on summary}\\
 \hline
 \textbf{Name} & \textbf{Serial} & \textbf{H[m]} & \textbf{Clamped to} & \textbf{Clamped with} & \textbf{Section} & \textbf{Inline H[m]} \\
 \hline
@@ -601,14 +603,14 @@ Sonardyne ORT & 290238-004 [A4] & 75.2 & 14in Panther Plast &  &  & 0.0 \\ \hlin
 \end{tabularx}
 \Needspace{5\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|}
-\caption{L245: Clamped with summary}\\
+\caption{L245 \textcolor{orange}{$\blacksquare$}: Clamped with summary}\\
 \hline
 \textbf{Clamp-on} & \textbf{Clamped with} & \textbf{Qty} \\
 \hline
 \end{tabularx}
 \Needspace{26\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|}
-\caption{L245: Assembly summary}\\
+\caption{L245 \textcolor{orange}{$\blacksquare$}: Assembly summary}\\
 \hline
 \textbf{Element} & \textbf{Serial} & \textbf{Length [m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height [in ASB]} \\
 \hline
@@ -635,172 +637,172 @@ Edgetech MF SD & 53086 (upper) &  &  &  & 74.7 [0.2 m AE] \\ \hline
 Sonardyne ORT & 290238-004 [A4] &  &  &  & 75.2 [0.0 m AE] \\ \hline
 \end{tabularx}
 \Needspace{160\baselineskip}
-\begin{tabularx}{\linewidth}{|l|l|l|}
+\begin{tabularx}{\linewidth}{|X|l|X|}
 \caption{All: summary of instruments}\\
 \hline
 \textbf{Element} & \textbf{Serial number} & \textbf{Mooring} \\
 \hline
-RBRquartz TP [n=3] & 213895 & W310 \\ \hline
- & 213896 & N280 \\ \hline
- & 213897 & L245 \\ \hline
-Ribuck Dual Kit for Sonardyne ORT [n=3] &  & W310 \\ \hline
- &  & N280 \\ \hline
- &  & S245 \\ \hline
-Sonardyne ORT [n=7] & 262762-001 [65] & W310 \\ \hline
- & 262762-002 [64] & W310 \\ \hline
- & 284837-003 [95] & N280 \\ \hline
- & 290238-004 [A4] & N280 \\ \hline
- & 284837-002 [93] & S245 \\ \hline
- & 284837-004 [99] & S245 \\ \hline
- & 290238-004 [A4] & L245 \\ \hline
-Swivel [n=3] &  & W310 \\ \hline
- &  & N280 \\ \hline
- &  & S245 \\ \hline
-FLNTUSB [n=3] & 1835 & W310 \\ \hline
- & 2997 & W310 \\ \hline
- & 3194 & W310 \\ \hline
-SBE39 T [n=1] & 3975 & W310 \\ \hline
-Zn Anode [n=11] &  & W310 \\ \hline
- &  & W310 \\ \hline
- &  & W310 \\ \hline
- &  & W310 \\ \hline
- &  & N280 \\ \hline
- &  & N280 \\ \hline
- &  & S245 \\ \hline
- &  & S245 \\ \hline
- &  & S245 \\ \hline
- &  & S245 \\ \hline
- &  & L245 \\ \hline
-SBE56 T [n=50] & 12319 & W310 \\ \hline
- & 7343 & W310 \\ \hline
- & 7344 & W310 \\ \hline
- & 7345 & W310 \\ \hline
- & 7346 & W310 \\ \hline
- & 7347 & W310 \\ \hline
- & 7369 & W310 \\ \hline
- & 7370 & W310 \\ \hline
- & 7371 & W310 \\ \hline
- & 7374 & W310 \\ \hline
- & 7375 & W310 \\ \hline
- & 7376 & W310 \\ \hline
- & 7377 & W310 \\ \hline
- & 7378 & W310 \\ \hline
- & 7399 & W310 \\ \hline
- & 7400 & W310 \\ \hline
- & 7401 & W310 \\ \hline
- & 7402 & W310 \\ \hline
- & 00674 & S245 \\ \hline
- & 00711 & S245 \\ \hline
- & 00725 & S245 \\ \hline
- & 00781 & S245 \\ \hline
- & 00877 & S245 \\ \hline
- & 00878 & S245 \\ \hline
- & 00879 & S245 \\ \hline
- & 00881 & S245 \\ \hline
- & 00907 & S245 \\ \hline
- & 00908 & S245 \\ \hline
- & 00909 & S245 \\ \hline
- & 00910 & S245 \\ \hline
- & 00912 & S245 \\ \hline
- & 02975 & S245 \\ \hline
- & 02976 & S245 \\ \hline
- & 02977 & S245 \\ \hline
- & 02978 & S245 \\ \hline
- & 02981 & S245 \\ \hline
- & 02983 & S245 \\ \hline
- & 6964 & S245 \\ \hline
- & 6965 & S245 \\ \hline
- & 7274 & S245 \\ \hline
- & 7308 & S245 \\ \hline
- & 7319 & S245 \\ \hline
- & 7338 & S245 \\ \hline
- & 7339 & S245 \\ \hline
- & 7340 & S245 \\ \hline
- & 7341 & S245 \\ \hline
- & 7342 & S245 \\ \hline
- & 7372 & S245 \\ \hline
- & 7403 & S245 \\ \hline
- & 7426 & S245 \\ \hline
-SBE39 ext. T [n=20] & 3799 & W310 \\ \hline
- & 3719 & N280 \\ \hline
- & 3721 & N280 \\ \hline
- & 3722 & N280 \\ \hline
- & 3723 & N280 \\ \hline
- & 3724 & N280 \\ \hline
- & 3725 & N280 \\ \hline
- & 3726 & N280 \\ \hline
- & 3727 & N280 \\ \hline
- & 3728 & N280 \\ \hline
- & 3729 & N280 \\ \hline
- & 3730 & N280 \\ \hline
- & 3731 & N280 \\ \hline
- & 3747 & N280 \\ \hline
- & 3749 & N280 \\ \hline
- & 3750 & N280 \\ \hline
- & 3752 & N280 \\ \hline
- & 3753 & N280 \\ \hline
- & 3754 & N280 \\ \hline
- & 3798 & N280 \\ \hline
-SBE39 sync. T [n=5] & 4456 & W310 \\ \hline
- & 4452 & N280 \\ \hline
- & 4453 & N280 \\ \hline
- & 4454 & N280 \\ \hline
- & 4455 & N280 \\ \hline
-75kHz+40in+Ti300kHz [n=1] &  & W310 \\ \hline
-Sentinel [n=1] & 20089 & W310 \\ \hline
-Longranger [n=2] & 16870 & W310 \\ \hline
- & 24613 & N280 \\ \hline
-SBE37 SMP titanium CTP [n=1] & 11063 & W310 \\ \hline
-SBE37 SMP plastic CTP [n=3] & 12738 & W310 \\ \hline
- & 12739 & W310 \\ \hline
- & 9276 & W310 \\ \hline
-SBE39 plus TP [n=2] & 8222 & W310 \\ \hline
- & 8223 & S245 \\ \hline
-100 cm Signature Frame [n=2] &  & W310 \\ \hline
- &  & S245 \\ \hline
-Signature 1000 [n=3] & 100244 & W310 \\ \hline
- & 100608 & S245 \\ \hline
- & 100460 & L245 \\ \hline
-SBE39 ext. TP [n=7] & 6523 & W310 \\ \hline
- & 6527 & N280 \\ \hline
- & 6528 & N280 \\ \hline
- & 6526 & S245 \\ \hline
- & 6529 & S245 \\ \hline
- & 6530 & S245 \\ \hline
- & 6617 & S245 \\ \hline
-Sercel+frame [n=3] &  & W310 \\ \hline
- &  & N280 \\ \hline
- &  & S245 \\ \hline
-Sercel [n=3] & 126989 & W310 \\ \hline
- & 126991 & N280 \\ \hline
- & 126990 & S245 \\ \hline
-75kHz+30in\_sph [n=1] &  & N280 \\ \hline
-RBR duet [n=2] & 82536 & N280 \\ \hline
- & 82538 & S245 \\ \hline
-SBE39 int. TP [n=1] & 5082 & N280 \\ \hline
-150kHz+30in\_sph [n=1] &  & S245 \\ \hline
-Quartermaster [n=1] & 11795 & S245 \\ \hline
-ADV+MP+uSquid+2B [n=1] &  & S245 \\ \hline
-Vector [n=4] & 6015 & S245 \\ \hline
- & 6017 & L245 \\ \hline
- & 6019 & L245 \\ \hline
- & 6329 & L245 \\ \hline
-uSquid [n=1] & 002 & S245 \\ \hline
-FP07 [n=1] & T937 & S245 \\ \hline
-Lander frame [n=1] &  & L245 \\ \hline
-NTUS [n=3] & 1521 & L245 \\ \hline
- & 359 & L245 \\ \hline
- & 360 & L245 \\ \hline
-SBE 19+ cage [n=1] & 6530 & L245 \\ \hline
-LISST\_200X [n=1] & 2031 & L245 \\ \hline
-Edgetech MF SD [n=2] & 53086 (upper) & L245 \\ \hline
- & 54435 & L245 \\ \hline
+100 cm Signature Frame [n=2] &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+150kHz+30in\_sph [n=1] &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+75kHz+30in\_sph [n=1] &  & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+75kHz+40in+Ti300kHz [n=1] &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ADV+MP+uSquid+2B [n=1] &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+Edgetech MF SD [n=2] & 53086 (upper) & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+ & 54435 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+FLNTUSB [n=3] & 1835 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 2997 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 3194 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+FP07 [n=1] & T937 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+LISST\_200X [n=1] & 2031 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+Lander frame [n=1] &  & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+Longranger [n=2] & 16870 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 24613 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+NTUS [n=3] & 1521 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+ & 359 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+ & 360 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+Quartermaster [n=1] & 11795 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+RBR duet [n=2] & 82536 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 82538 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+RBRquartz TP [n=3] & 213895 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 213896 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 213897 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+Ribuck Dual Kit for Sonardyne ORT [n=3] &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+SBE 19+ cage [n=1] & 6530 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+SBE37 SMP plastic CTP [n=3] & 12738 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 12739 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 9276 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+SBE37 SMP titanium CTP [n=1] & 11063 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+SBE39 T [n=1] & 3975 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+SBE39 ext. T [n=20] & 3799 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 3719 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3721 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3722 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3723 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3724 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3725 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3726 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3727 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3728 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3729 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3730 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3731 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3747 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3749 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3750 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3752 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3753 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3754 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 3798 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+SBE39 ext. TP [n=7] & 6523 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 6527 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 6528 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 6526 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 6529 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 6530 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 6617 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+SBE39 int. TP [n=1] & 5082 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+SBE39 plus TP [n=2] & 8222 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 8223 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+SBE39 sync. T [n=5] & 4456 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 4452 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 4453 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 4454 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 4455 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+SBE56 T [n=50] & 12319 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7343 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7344 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7345 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7346 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7347 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7369 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7370 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7371 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7374 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7375 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7376 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7377 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7378 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7399 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7400 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7401 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 7402 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 00674 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00711 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00725 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00781 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00877 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00878 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00879 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00881 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00907 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00908 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00909 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00910 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 00912 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 02975 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 02976 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 02977 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 02978 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 02981 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 02983 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 6964 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 6965 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7274 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7308 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7319 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7338 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7339 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7340 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7341 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7342 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7372 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7403 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 7426 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+Sentinel [n=1] & 20089 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+Sercel [n=3] & 126989 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 126991 & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 126990 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+Sercel+frame [n=3] &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+Signature 1000 [n=3] & 100244 & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 100608 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 100460 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+Sonardyne ORT [n=7] & 262762-001 [65] & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 262762-002 [64] & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ & 284837-003 [95] & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 290238-004 [A4] & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ & 284837-002 [93] & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 284837-004 [99] & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 290238-004 [A4] & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+Swivel [n=3] &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+Vector [n=4] & 6015 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ & 6017 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+ & 6019 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+ & 6329 & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+Zn Anode [n=11] &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & W310 \textcolor{blue}{$\blacksquare$} \\ \hline
+ &  & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ &  & N280 \textcolor{red}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ &  & S245 \textcolor{green}{$\blacksquare$} \\ \hline
+ &  & L245 \textcolor{orange}{$\blacksquare$} \\ \hline
+uSquid [n=1] & 002 & S245 \textcolor{green}{$\blacksquare$} \\ \hline
 \end{tabularx}
 \Needspace{56\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|}
 \caption{All : Total count of each element}\\
 \hline
-\textbf{Name} & \textbf{L245} & \textbf{N280} & \textbf{S245} & \textbf{W310} & \textbf{Total} \\
+\textbf{Name} & \textbf{L245 \textcolor{orange}{$\blacksquare$}} & \textbf{N280 \textcolor{red}{$\blacksquare$}} & \textbf{S245 \textcolor{green}{$\blacksquare$}} & \textbf{W310 \textcolor{blue}{$\blacksquare$}} & \textbf{Total} \\
 \hline
 100 cm Signature Frame & 0 & 0 & 1 & 1 & 2 \\ \hline
 10mm Load Ring & 0 & 3 & 4 & 3 & 10 \\ \hline
@@ -858,7 +860,7 @@ uSquid & 0 & 0 & 1 & 0 & 1 \\ \hline
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
 \caption{All : Total count clamp types}\\
 \hline
-\textbf{Clamp-on} & \textbf{Clamped with} & \textbf{W310} & \textbf{N280} & \textbf{S245} & \textbf{L245} & \textbf{Total} \\
+\textbf{Clamp-on} & \textbf{Clamped with} & \textbf{W310 \textcolor{blue}{$\blacksquare$}} & \textbf{N280 \textcolor{red}{$\blacksquare$}} & \textbf{S245 \textcolor{green}{$\blacksquare$}} & \textbf{L245 \textcolor{orange}{$\blacksquare$}} & \textbf{Total} \\
 \hline
 \end{tabularx}
 \Needspace{22\baselineskip}
@@ -867,27 +869,27 @@ uSquid & 0 & 0 & 1 & 0 & 1 \\ \hline
 \hline
 \textbf{Mooring} & \textbf{Section} & \textbf{Material} & \textbf{Length} \\
 \hline
-W310 &  & 3/8 chain SL & 2.0 \\ \hline
-W310 & A & 3/8 wire rope & 26.0 \\ \hline
-W310 & B & 3/8 wire rope & 167.0 \\ \hline
-W310 & C & 3/8 wire rope & 88.0 \\ \hline
-W310 & D & 3/8 wire rope & 4.5 \\ \hline
-W310 & E & 6mm AmSteel & 1.0 \\ \hline
-N280 &  & 3/8 chain SL & 1.8 \\ \hline
-N280 & A & 3/8 wire rope & 195.0 \\ \hline
-N280 & B & 3/8 wire rope & 62.5 \\ \hline
-N280 & C & 6mm AmSteel & 1.0 \\ \hline
-S245 &  & 3/8 chain SL & 1.8 \\ \hline
-S245 & A & 3/8 wire rope & 145.0 \\ \hline
-S245 & B & 3/8 wire rope & 32.5 \\ \hline
-S245 & C & 3/8 wire rope & 32.5 \\ \hline
-S245 & D & 3/8 wire rope & 4.5 \\ \hline
-S245 & E & 6mm AmSteel & 4.5 \\ \hline
-L245 & A & 3/8 wire rope & 70.6 \\ \hline
+W310 \textcolor{blue}{$\blacksquare$} &  & 3/8 chain SL & 2.0 \\ \hline
+W310 \textcolor{blue}{$\blacksquare$} & A & 3/8 wire rope & 26.0 \\ \hline
+W310 \textcolor{blue}{$\blacksquare$} & B & 3/8 wire rope & 167.0 \\ \hline
+W310 \textcolor{blue}{$\blacksquare$} & C & 3/8 wire rope & 88.0 \\ \hline
+W310 \textcolor{blue}{$\blacksquare$} & D & 3/8 wire rope & 4.5 \\ \hline
+W310 \textcolor{blue}{$\blacksquare$} & E & 6mm AmSteel & 1.0 \\ \hline
+N280 \textcolor{red}{$\blacksquare$} &  & 3/8 chain SL & 1.8 \\ \hline
+N280 \textcolor{red}{$\blacksquare$} & A & 3/8 wire rope & 195.0 \\ \hline
+N280 \textcolor{red}{$\blacksquare$} & B & 3/8 wire rope & 62.5 \\ \hline
+N280 \textcolor{red}{$\blacksquare$} & C & 6mm AmSteel & 1.0 \\ \hline
+S245 \textcolor{green}{$\blacksquare$} &  & 3/8 chain SL & 1.8 \\ \hline
+S245 \textcolor{green}{$\blacksquare$} & A & 3/8 wire rope & 145.0 \\ \hline
+S245 \textcolor{green}{$\blacksquare$} & B & 3/8 wire rope & 32.5 \\ \hline
+S245 \textcolor{green}{$\blacksquare$} & C & 3/8 wire rope & 32.5 \\ \hline
+S245 \textcolor{green}{$\blacksquare$} & D & 3/8 wire rope & 4.5 \\ \hline
+S245 \textcolor{green}{$\blacksquare$} & E & 6mm AmSteel & 4.5 \\ \hline
+L245 \textcolor{orange}{$\blacksquare$} & A & 3/8 wire rope & 70.6 \\ \hline
 \end{tabularx}
 \Needspace{14\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of W310, A, length: 26.0 m, material: 3/8 wire rope}\\
+\caption{Summary of W310 \textcolor{blue}{$\blacksquare$}, A, length: 26.0 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -903,7 +905,7 @@ SBE39 sync. T & 4456 & 24.9 & 20.5 \\ \hline
 \end{tabularx}
 \Needspace{20\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of W310, B, length: 167.0 m, material: 3/8 wire rope}\\
+\caption{Summary of W310 \textcolor{blue}{$\blacksquare$}, B, length: 167.0 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -925,7 +927,7 @@ SBE39 plus TP & 8222 & 195.6 & 162.4 \\ \hline
 \end{tabularx}
 \Needspace{13\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of W310, C, length: 88.0 m, material: 3/8 wire rope}\\
+\caption{Summary of W310 \textcolor{blue}{$\blacksquare$}, C, length: 88.0 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -940,7 +942,7 @@ SBE37 SMP plastic CTP & 9276 & 283.0 & 81.6 \\ \hline
 \end{tabularx}
 \Needspace{7\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of W310, D, length: 4.5 m, material: 3/8 wire rope}\\
+\caption{Summary of W310 \textcolor{blue}{$\blacksquare$}, D, length: 4.5 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -949,14 +951,14 @@ SBE39 ext. TP & 6523 & 295.0 & 3.8 \\ \hline
 \end{tabularx}
 \Needspace{5\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of W310, E, length: 1.0 m, material: 6mm AmSteel}\\
+\caption{Summary of W310 \textcolor{blue}{$\blacksquare$}, E, length: 1.0 m, material: 6mm AmSteel}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
 \end{tabularx}
 \Needspace{27\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of N280, A, length: 195.0 m, material: 3/8 wire rope}\\
+\caption{Summary of N280 \textcolor{red}{$\blacksquare$}, A, length: 195.0 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -985,7 +987,7 @@ SBE39 ext. T & 3750 & 200.7 & 194.2 \\ \hline
 \end{tabularx}
 \Needspace{12\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of N280, B, length: 62.5 m, material: 3/8 wire rope}\\
+\caption{Summary of N280 \textcolor{red}{$\blacksquare$}, B, length: 62.5 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -999,14 +1001,14 @@ SBE39 int. TP & 5082 & 264.7 & 61.9 \\ \hline
 \end{tabularx}
 \Needspace{5\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of N280, C, length: 1.0 m, material: 6mm AmSteel}\\
+\caption{Summary of N280 \textcolor{red}{$\blacksquare$}, C, length: 1.0 m, material: 6mm AmSteel}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
 \end{tabularx}
 \Needspace{28\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of S245, A, length: 145.0 m, material: 3/8 wire rope}\\
+\caption{Summary of S245 \textcolor{green}{$\blacksquare$}, A, length: 145.0 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -1036,7 +1038,7 @@ SBE56 T & 02983 & 151.0 & 144.6 \\ \hline
 \end{tabularx}
 \Needspace{12\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of S245, B, length: 32.5 m, material: 3/8 wire rope}\\
+\caption{Summary of S245 \textcolor{green}{$\blacksquare$}, B, length: 32.5 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -1050,7 +1052,7 @@ SBE56 T & 7308 & 183.8 & 31.0 \\ \hline
 \end{tabularx}
 \Needspace{11\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of S245, C, length: 32.5 m, material: 3/8 wire rope}\\
+\caption{Summary of S245 \textcolor{green}{$\blacksquare$}, C, length: 32.5 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -1063,7 +1065,7 @@ SBE56 T & 7340 & 211.3 & 23.7 \\ \hline
 \end{tabularx}
 \Needspace{8\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of S245, D, length: 4.5 m, material: 3/8 wire rope}\\
+\caption{Summary of S245 \textcolor{green}{$\blacksquare$}, D, length: 4.5 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -1073,7 +1075,7 @@ SBE39 ext. TP & 6617 & 225.9 & 4.0 \\ \hline
 \end{tabularx}
 \Needspace{6\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of S245, E, length: 4.5 m, material: 6mm AmSteel}\\
+\caption{Summary of S245 \textcolor{green}{$\blacksquare$}, E, length: 4.5 m, material: 6mm AmSteel}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline
@@ -1081,7 +1083,7 @@ SBE56 T & 7342 & 228.7 & 0.4 \\ \hline
 \end{tabularx}
 \Needspace{6\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}
-\caption{Summary of L245, A, length: 70.6 m, material: 3/8 wire rope}\\
+\caption{Summary of L245 \textcolor{orange}{$\blacksquare$}, A, length: 70.6 m, material: 3/8 wire rope}\\
 \hline
 \textbf{Name} & \textbf{Serial number} & \textbf{Height [m]} & \textbf{Along element} \\
 \hline

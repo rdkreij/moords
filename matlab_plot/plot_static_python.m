@@ -884,6 +884,7 @@ end
 % end
 
 % error
+zlim([0,top(3)])
 end
 
 function text = drop_uwa(text)

@@ -19,6 +19,7 @@ def plot_design(
     line_ratio_plot=0.5,
     figsize=(3, 10),
     minimum_element_dim=0.2,
+    show_color=True,
 ):
     """
     Plot the structure of a mooring system including inline elements and clamp-ons.
@@ -51,6 +52,9 @@ def plot_design(
         Figure size in inches (width, height) (default is (3, 10)).
     minimum_element_dim : float, optional
         Minimum dimension (width and length) for elements in the plot (default is 0.2).
+    show_color : bool, optional
+        Whether to color-code mooring
+
 
     Returns
     -------
@@ -202,7 +206,19 @@ def plot_design(
     # Create figure
     fig, ax = plt.subplots(figsize=(fig_width_in, fig_height_in))
     ax.set_aspect("equal")
-    ax.text(0, top_height_plot[-1], mooring.name, va="bottom", ha="center")
+    if show_color:
+        bbox = dict(facecolor="none", edgecolor=mooring.color, boxstyle="round,pad=0.2")
+    else:
+        bbox = None
+    ax.text(
+        0,
+        top_height_plot[-1],
+        mooring.name,
+        va="bottom",
+        ha="center",
+        bbox=bbox,
+        zorder=0,
+    )
 
     # Plot inline
     flag_set_y = True
