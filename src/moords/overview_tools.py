@@ -303,6 +303,7 @@ def make_df_summary_element_all(df: pd.DataFrame) -> tuple[pd.DataFrame, str]:
         unique_mooring = dfcc["mooring"].unique()
 
         serial_list = []
+        clamped_with_list = []
         mooring_list = []
 
         for mooring in unique_mooring:
@@ -310,24 +311,33 @@ def make_df_summary_element_all(df: pd.DataFrame) -> tuple[pd.DataFrame, str]:
             dfccc = dfcc.loc[idx_mooring]
             dfccc = dfccc.sort_values(by="serial")
             serial_list += list(dfccc["serial"])
+            clamped_with_list += list(dfccc["clamped_with"])
             mooring_list += list(dfccc["mooring"])
         serial_list = format_data.format_array(serial_list)
+        clamped_with_list = format_data.format_array(clamped_with_list)
         mooring_list = format_data.format_array(mooring_list)
 
         for i in range(n):
             serial = serial_list[i]
+            clamped_with = clamped_with_list[i]
             mooring = mooring_list[i]
             if i == 0:
                 list_collect.append(
                     {
                         "Element": f"{elem} [n={n:.0f}]",
                         "Serial number": serial,
+                        "Clamped with": clamped_with,
                         "Mooring": mooring,
                     }
                 )
             else:
                 list_collect.append(
-                    {"Element": "", "Serial number": serial, "Mooring": mooring}
+                    {
+                        "Element": "",
+                        "Serial number": serial,
+                        "Clamped with": clamped_with,
+                        "Mooring": mooring,
+                    }
                 )
     df_summary_element_all = pd.DataFrame(list_collect)
     info = "All: summary of instruments"
