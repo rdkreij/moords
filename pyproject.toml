@@ -1,6 +1,6 @@
 [project]
 name = "moords"
-version = "0.2.5"
+version = "0.2.6"
 description = "A mooring design and simulation package"
 authors = [
     {name = "Rick de Kreij"}
