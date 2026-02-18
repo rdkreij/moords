@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.15)  17 FEB 2026 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.15)  18 FEB 2026 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -115,7 +115,10 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
-)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
@@ -175,20 +178,20 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 (output/fieldwork/print/fieldwork_tables.aux)
 \openout1 = `fieldwork_tables.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -243,92 +246,92 @@ LaTeX Font Info:    ... okay on input line 14.
 nts/map/pdftex/updmap/pdftex.map}
 
 ]
-Overfull \hbox (4.72621pt too wide) in paragraph at lines 103--103
+Overfull \hbox (4.72621pt too wide) in paragraph at lines 102--102
 []|\OT1/cmr/m/n/10 75kHz+40in+Ti300kHz| 
  []
 
 
-Overfull \hbox (4.72621pt too wide) in paragraph at lines 103--103
+Overfull \hbox (4.72621pt too wide) in paragraph at lines 102--102
 []|\OT1/cmr/m/n/10 75kHz+40in+Ti300kHz| 
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 103--103
+Underfull \hbox (badness 5374) in paragraph at lines 102--102
 []|\OT1/cmr/m/n/10 SBE37 SMP plas-tic
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 103--103
+Underfull \hbox (badness 5374) in paragraph at lines 102--102
 []|\OT1/cmr/m/n/10 SBE37 SMP plas-tic
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 103--103
+Underfull \hbox (badness 5374) in paragraph at lines 102--102
 []|\OT1/cmr/m/n/10 SBE37 SMP plas-tic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 []|\OT1/cmr/m/n/10 100 cm Sig-na-ture
  []
 
 [2]
-Underfull \hbox (badness 1917) in paragraph at lines 202--202
+Underfull \hbox (badness 1917) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10 Ribuck Dual Kit for
  []
 
 
-Overfull \hbox (1.86014pt too wide) in paragraph at lines 202--202
+Overfull \hbox (1.86014pt too wide) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10 75kHz+40in+Ti300kHz| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10 SBE37 SMP plas-tic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10 SBE37 SMP plas-tic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10 SBE37 SMP plas-tic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10 100 cm Sig-na-ture
  []
 
 [3] [4] [5] [6]
-Underfull \hbox (badness 1917) in paragraph at lines 354--354
+Underfull \hbox (badness 1917) in paragraph at lines 353--353
 []|\OT1/cmr/m/n/10 Ribuck Dual Kit for
  []
 
 [7] [8] [9] [10]
-Underfull \hbox (badness 1917) in paragraph at lines 561--561
+Underfull \hbox (badness 1917) in paragraph at lines 560--560
 []|\OT1/cmr/m/n/10 Ribuck Dual Kit for
  []
 
 
-Overfull \hbox (2.55458pt too wide) in paragraph at lines 561--561
+Overfull \hbox (2.55458pt too wide) in paragraph at lines 560--560
 []|\OT1/cmr/m/n/10 ADV+MP+uSquid+2B| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--561
+Underfull \hbox (badness 10000) in paragraph at lines 560--560
 []|\OT1/cmr/m/n/10 100 cm Sig-na-ture
  []
 
 [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23]
 (output/fieldwork/print/fieldwork_tables.aux) ) 
 Here is how much of TeX's memory you used:
- 3146 strings out of 478287
- 46118 string characters out of 5849289
- 607304 words of memory out of 5000000
- 21340 multiletter control sequences out of 15000+600000
+ 3220 strings out of 478287
+ 47330 string characters out of 5849289
+ 611202 words of memory out of 5000000
+ 21411 multiletter control sequences out of 15000+600000
  471619 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,62p,305b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -336,7 +339,7 @@ Here is how much of TeX's memory you used:
 onts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb>
-Output written on output/fieldwork/print/fieldwork_tables.pdf (23 pages, 122299
+Output written on output/fieldwork/print/fieldwork_tables.pdf (23 pages, 122303
  bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)

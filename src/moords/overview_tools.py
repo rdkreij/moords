@@ -183,6 +183,9 @@ def make_df_assambly(df: pd.DataFrame, mooring: str) -> tuple[pd.DataFrame, str]
 def make_df_count_all(df) -> tuple[pd.DataFrame, str]:
     """Make summary of the total count of all elements across all moorings."""
     count_df = df.groupby(["name", "mooring"]).size().unstack(fill_value=0)
+    mooring_names = df.mooring.unique()
+    # organise columns in order of mooring names
+    count_df = count_df[mooring_names]
     count_df["Total"] = count_df.sum(axis=1)
     df_count_all = count_df.reset_index()
     # turn into string with no decimals

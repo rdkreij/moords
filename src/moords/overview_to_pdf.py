@@ -57,8 +57,7 @@ def generate_latex_summary(
     latex_str += r"\keepXColumns" + "\n"
     latex_str += r"\usepackage{needspace}" + "\n"
     latex_str += r"\usepackage{booktabs}" + "\n"
-    latex_str += r"\usepackage[table]{xcolor}" + "\n"
-    latex_str += r"\usepackage{xcolor}" + "\n"
+    latex_str += r"\usepackage[table,dvipsnames]{xcolor}" + "\n"
     latex_str += r"\usepackage{amssymb}" + "\n"
     latex_str += r"\usepackage[margin=.5in]{geometry}" + "\n"
     if header is not None:
