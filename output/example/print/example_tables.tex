@@ -3,7 +3,8 @@
 \keepXColumns
 \usepackage{needspace}
 \usepackage{booktabs}
-\usepackage[table]{xcolor}
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{amssymb}
 \usepackage[margin=.5in]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -13,17 +14,17 @@
 
 \arrayrulecolor[gray]{0.7}
 \Needspace{11\baselineskip}
-\begin{tabularx}{\linewidth}{|l|l|l|l|}
+\begin{tabularx}{\linewidth}{|l|l|l|l|l|}
 \caption{M1: Element summary}\\
 \hline
-\textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} \\
+\textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} & \textbf{Weight [kg]} \\
 \hline
-3 Railway Wheels & 1 &  & -1350.0 \\ \hline
-3/8 wire rope & 1 & 50.0 & -16.5 \\ \hline
-41in ORE & 1 &  & 433.0 \\ \hline
-FLNTUSB & 1 &  & -0.2 \\ \hline
-SBE39 T & 1 &  & -0.2 \\ \hline
-Zn Anode & 1 &  & -0.1 \\ \hline
+3 Railway Wheels & 1 &  & -1350.0 & 1350.0 \\ \hline
+3/8 wire rope & 1 & 50.0 & -16.5 & 16.5 \\ \hline
+41in ORE & 1 &  & 433.0 &  \\ \hline
+FLNTUSB & 1 &  & -0.2 &  \\ \hline
+SBE39 T & 1 &  & -0.2 &  \\ \hline
+Zn Anode & 1 &  & -0.1 &  \\ \hline
 \end{tabularx}
 \Needspace{8\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
@@ -46,42 +47,42 @@ SBE39 T & plastic clamp & 1 \\ \hline
 Zn Anode & bulldog & 1 \\ \hline
 \end{tabularx}
 \Needspace{11\baselineskip}
-\begin{tabularx}{\linewidth}{|l|l|l|l|l|l|}
+\begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
 \caption{M1: Assembly summary}\\
 \hline
-\textbf{Element} & \textbf{Serial} & \textbf{Length [m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height [in ASB]} \\
+\textbf{Element} & \textbf{Serial} & \textbf{Length[m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height[in ASB]} & \textbf{Weight[kg]} \\
 \hline
-3 Railway Wheels &  &  &  &  & 0.0 \\ \hline
-3/8 wire rope &  & 50.0 & A &  & 0.6 \\ \hline
-Zn Anode &  &  & A & bulldog & 4.5 [4.0 m AE] \\ \hline
-FLNTUSB & 2927 &  & A & plastic clamp & 20.0 [19.4 m AE] \\ \hline
-SBE39 T & 3921 &  & A & plastic clamp & 30.0 [29.4 m AE] \\ \hline
-41in ORE &  &  &  &  & 50.5 \\ \hline
+3 Railway Wheels &  &  &  &  & 0.0 & 1350.0 \\ \hline
+3/8 wire rope &  & 50.0 & A &  & 0.6 & 16.5 \\ \hline
+$-$Zn Anode &  &  & A & bulldog & 4.5 [4.0 m AE] &  \\ \hline
+$-$FLNTUSB & 2927 &  & A & plastic clamp & 20.0 [19.4 m AE] &  \\ \hline
+$-$SBE39 T & 3921 &  & A & plastic clamp & 30.0 [29.4 m AE] &  \\ \hline
+41in ORE &  &  &  &  & 50.5 &  \\ \hline
 \end{tabularx}
 \Needspace{23\baselineskip}
-\begin{tabularx}{\linewidth}{|l|l|l|l|}
+\begin{tabularx}{\linewidth}{|l|l|l|l|l|}
 \caption{M2: Element summary}\\
 \hline
-\textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} \\
+\textbf{Element} & \textbf{Qty} & \textbf{Length [m]} & \textbf{Buoyancy [kg]} & \textbf{Weight [kg]} \\
 \hline
-13mmBS & 2 &  & -0.7 \\ \hline
-14in Panther Plast & 1 &  & 17.6 \\ \hline
-16mmBS & 4 &  & -0.7 \\ \hline
-16mmDS & 1 &  & -0.7 \\ \hline
-3 Railway Wheels & 1 &  & -1350.0 \\ \hline
-3/8 wire rope & 2 & 120.0 & -39.6 \\ \hline
-41in ORE & 1 &  & 433.0 \\ \hline
-6mm AmSteel & 1 & 1.0 & 0.0 \\ \hline
-75kHz+40in+Ti300kHz & 1 &  & 85.8 \\ \hline
-8mm Load Ring & 2 &  & 0.5 \\ \hline
-FLNTUSB & 3 &  & -0.2 \\ \hline
-Longranger & 1 &  & 0.0 \\ \hline
-SBE39 T & 1 &  & -0.2 \\ \hline
-SBE39 ext. T & 1 &  & -0.2 \\ \hline
-SBE39 sync. T & 1 &  & -0.2 \\ \hline
-SBE56 T & 2 &  & -0.1 \\ \hline
-Sentinel & 1 &  & 0.0 \\ \hline
-Zn Anode & 2 &  & -0.1 \\ \hline
+13mmBS & 2 &  & -0.7 &  \\ \hline
+14in Panther Plast & 1 &  & 17.6 & 7.1 \\ \hline
+16mmBS & 4 &  & -0.7 &  \\ \hline
+16mmDS & 1 &  & -0.7 &  \\ \hline
+3 Railway Wheels & 1 &  & -1350.0 & 1350.0 \\ \hline
+3/8 wire rope & 2 & 120.0 & -39.6 & 39.6 \\ \hline
+41in ORE & 1 &  & 433.0 &  \\ \hline
+6mm AmSteel & 1 & 1.0 & 0.0 &  \\ \hline
+75kHz+40in+Ti300kHz & 1 &  & 85.8 & 297.0 \\ \hline
+8mm Load Ring & 2 &  & -0.5 &  \\ \hline
+FLNTUSB & 3 &  & -0.2 &  \\ \hline
+Longranger & 1 &  & 0.0 &  \\ \hline
+SBE39 T & 1 &  & -0.2 &  \\ \hline
+SBE39 ext. T & 1 &  & -0.2 &  \\ \hline
+SBE39 sync. T & 1 &  & -0.2 &  \\ \hline
+SBE56 T & 2 &  & -0.1 &  \\ \hline
+Sentinel & 1 &  & 0.0 &  \\ \hline
+Zn Anode & 2 &  & -0.1 &  \\ \hline
 \end{tabularx}
 \Needspace{17\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
@@ -114,62 +115,62 @@ SBE56 T & cage & 1 \\ \hline
 Zn Anode & bulldog & 2 \\ \hline
 \end{tabularx}
 \Needspace{33\baselineskip}
-\begin{tabularx}{\linewidth}{|l|l|l|l|l|l|}
+\begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
 \caption{M2: Assembly summary}\\
 \hline
-\textbf{Element} & \textbf{Serial} & \textbf{Length [m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height [in ASB]} \\
+\textbf{Element} & \textbf{Serial} & \textbf{Length[m]} & \textbf{Section} & \textbf{Clamped with} & \textbf{Height[in ASB]} & \textbf{Weight[kg]} \\
 \hline
-3 Railway Wheels &  &  &  &  & 0.0 \\ \hline
-16mmBS &  &  &  &  & 0.6 \\ \hline
-3/8 wire rope &  & 50.0 & A &  & 0.6 \\ \hline
-Zn Anode &  &  & A & bulldog & 4.6 [4.0 m AE] \\ \hline
-FLNTUSB & 2997 &  & A & plastic clamp & 10.0 [9.4 m AE] \\ \hline
-SBE39 T & 3975 &  & A &  & 15.0 [14.4 m AE] \\ \hline
-FLNTUSB & 3194 &  & A & plastic clamp & 20.0 [19.4 m AE] \\ \hline
-SBE56 T & 7343 &  & A & cage & 30.0 [29.4 m AE] \\ \hline
-SBE39 ext. T & 3799 &  & A &  & 45.0 [44.4 m AE] \\ \hline
-13mmBS &  &  &  &  & 50.6 \\ \hline
-8mm Load Ring &  &  &  &  & 50.7 \\ \hline
-16mmBS &  &  &  &  & 50.8 \\ \hline
-75kHz+40in+Ti300kHz &  &  &  &  & 50.8 \\ \hline
-Sentinel & 20089 &  &  &  & 51.2 [0.4 m AE] \\ \hline
-Longranger & 16870 &  &  &  & 52.8 [1.9 m AE] \\ \hline
-16mmBS &  &  &  &  & 53.1 \\ \hline
-3/8 wire rope &  & 70.0 & B &  & 53.2 \\ \hline
-Zn Anode &  &  & B & bulldog & 57.2 [4.0 m AE] \\ \hline
-FLNTUSB & 1835 &  & B & plastic clamp & 70.0 [16.8 m AE] \\ \hline
-SBE56 T & 7344 &  & B & plastic clamp & 90.0 [36.8 m AE] \\ \hline
-SBE39 sync. T & 4456 &  & B &  & 100.0 [46.8 m AE] \\ \hline
-13mmBS &  &  &  &  & 123.2 \\ \hline
-8mm Load Ring &  &  &  &  & 123.3 \\ \hline
-16mmBS &  &  &  &  & 123.4 \\ \hline
-41in ORE &  &  &  &  & 123.4 \\ \hline
-6mm AmSteel &  & 1.0 &  &  & 124.5 \\ \hline
-16mmDS &  &  &  &  & 125.5 \\ \hline
-14in Panther Plast &  &  &  &  & 125.5 \\ \hline
+3 Railway Wheels &  &  &  &  & 0.0 & 1350.0 \\ \hline
+16mmBS &  &  &  &  & 0.6 &  \\ \hline
+3/8 wire rope &  & 50.0 & A &  & 0.6 & 16.5 \\ \hline
+$-$Zn Anode &  &  & A & bulldog & 4.6 [4.0 m AE] &  \\ \hline
+$-$FLNTUSB & 2997 &  & A & plastic clamp & 10.0 [9.4 m AE] &  \\ \hline
+$-$SBE39 T & 3975 &  & A &  & 15.0 [14.4 m AE] &  \\ \hline
+$-$FLNTUSB & 3194 &  & A & plastic clamp & 20.0 [19.4 m AE] &  \\ \hline
+$-$SBE56 T & 7343 &  & A & cage & 30.0 [29.4 m AE] &  \\ \hline
+$-$SBE39 ext. T & 3799 &  & A &  & 45.0 [44.4 m AE] &  \\ \hline
+13mmBS &  &  &  &  & 50.6 &  \\ \hline
+8mm Load Ring &  &  &  &  & 50.7 &  \\ \hline
+16mmBS &  &  &  &  & 50.8 &  \\ \hline
+75kHz+40in+Ti300kHz &  &  &  &  & 50.8 & 297.0 \\ \hline
+$-$Sentinel & 20089 &  &  &  & 51.2 [0.4 m AE] &  \\ \hline
+$-$Longranger & 16870 &  &  &  & 52.8 [1.9 m AE] &  \\ \hline
+16mmBS &  &  &  &  & 53.1 &  \\ \hline
+3/8 wire rope &  & 70.0 & B &  & 53.2 & 23.1 \\ \hline
+$-$Zn Anode &  &  & B & bulldog & 57.2 [4.0 m AE] &  \\ \hline
+$-$FLNTUSB & 1835 &  & B & plastic clamp & 70.0 [16.8 m AE] &  \\ \hline
+$-$SBE56 T & 7344 &  & B & plastic clamp & 90.0 [36.8 m AE] &  \\ \hline
+$-$SBE39 sync. T & 4456 &  & B &  & 100.0 [46.8 m AE] &  \\ \hline
+13mmBS &  &  &  &  & 123.2 &  \\ \hline
+8mm Load Ring &  &  &  &  & 123.3 &  \\ \hline
+16mmBS &  &  &  &  & 123.4 &  \\ \hline
+41in ORE &  &  &  &  & 123.4 &  \\ \hline
+6mm AmSteel &  & 1.0 &  &  & 124.5 &  \\ \hline
+16mmDS &  &  &  &  & 125.5 &  \\ \hline
+14in Panther Plast &  &  &  &  & 125.5 & 7.1 \\ \hline
 \end{tabularx}
 \Needspace{21\baselineskip}
-\begin{tabularx}{\linewidth}{|l|l|l|}
+\begin{tabularx}{\linewidth}{|l|l|l|l|}
 \caption{All: summary of instruments}\\
 \hline
-\textbf{Element} & \textbf{Serial number} & \textbf{Mooring} \\
+\textbf{Element} & \textbf{Serial number} & \textbf{Clamped with} & \textbf{Mooring} \\
 \hline
-Zn Anode [n=3] &  & M1 \\ \hline
- &  & M2 \\ \hline
- &  & M2 \\ \hline
-FLNTUSB [n=4] & 2927 & M1 \\ \hline
- & 1835 & M2 \\ \hline
- & 2997 & M2 \\ \hline
- & 3194 & M2 \\ \hline
-SBE39 T [n=2] & 3921 & M1 \\ \hline
- & 3975 & M2 \\ \hline
-SBE56 T [n=2] & 7343 & M2 \\ \hline
- & 7344 & M2 \\ \hline
-SBE39 ext. T [n=1] & 3799 & M2 \\ \hline
-75kHz+40in+Ti300kHz [n=1] &  & M2 \\ \hline
-Sentinel [n=1] & 20089 & M2 \\ \hline
-Longranger [n=1] & 16870 & M2 \\ \hline
-SBE39 sync. T [n=1] & 4456 & M2 \\ \hline
+75kHz+40in+Ti300kHz [n=1] &  &  & M2 \\ \hline
+FLNTUSB [n=4] & 2927 & plastic clamp & M1 \\ \hline
+ & 1835 & plastic clamp & M2 \\ \hline
+ & 2997 & plastic clamp & M2 \\ \hline
+ & 3194 & plastic clamp & M2 \\ \hline
+Longranger [n=1] & 16870 &  & M2 \\ \hline
+SBE39 T [n=2] & 3921 & plastic clamp & M1 \\ \hline
+ & 3975 &  & M2 \\ \hline
+SBE39 ext. T [n=1] & 3799 &  & M2 \\ \hline
+SBE39 sync. T [n=1] & 4456 &  & M2 \\ \hline
+SBE56 T [n=2] & 7343 & cage & M2 \\ \hline
+ & 7344 & plastic clamp & M2 \\ \hline
+Sentinel [n=1] & 20089 &  & M2 \\ \hline
+Zn Anode [n=3] &  & bulldog & M1 \\ \hline
+ &  & bulldog & M2 \\ \hline
+ &  & bulldog & M2 \\ \hline
 \end{tabularx}
 \Needspace{23\baselineskip}
 \begin{tabularx}{\linewidth}{|l|l|l|l|}

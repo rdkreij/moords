@@ -47,12 +47,27 @@ def make_df_element_summary(df: pd.DataFrame, mooring: str) -> tuple[pd.DataFram
         else:
             buoyancy.append(f"{total_buoyancy / len(idx):.1f}")
 
+    weight = []
+    for item in names:
+        total_weight = 0
+        idx = np.where(df_mooring["name"] == item)[0]
+        for i in idx:
+            data = df_mooring.iloc[i]
+            total_weight += data["weight"]
+        if total_weight == 0:
+            weight.append("")
+        elif data["bool_line"]:
+            weight.append(f"{total_weight:.1f}")
+        else:
+            weight.append(f"{total_weight / len(idx):.1f}")
+
     df_element_summary = pd.DataFrame(
         {
             "Element": names,
             "Qty": counts,
             "Length [m]": line_length,
             "Buoyancy [kg]": buoyancy,
+            "Weight [kg]": weight,
         }
     )
     info = f"{mooring}: Element summary"
@@ -145,6 +160,10 @@ def make_df_assambly(df: pd.DataFrame, mooring: str) -> tuple[pd.DataFrame, str]
     df_mooring = df.loc[df["mooring"] == mooring]
 
     name = format_data.format_array(df_mooring["name"])
+    bool_clampon = df_mooring["bool_clampon"].values
+    for i in range(len(df_mooring)):
+        if bool_clampon[i]:
+            name[i] = rf"$-${name[i]}"
     serial = format_data.format_array(df_mooring["serial"])
 
     line_length = []
@@ -166,14 +185,23 @@ def make_df_assambly(df: pd.DataFrame, mooring: str) -> tuple[pd.DataFrame, str]
             height.append(f"{data['bottom_height']:.1f}")
     clamped_with = format_data.format_array(df_mooring["clamped_with"])
 
+    weight = []
+    for i in range(len(df_mooring)):
+        data = df_mooring.iloc[i]
+        if data["weight"] == 0:
+            weight.append("")
+        else:
+            weight.append(f"{data['weight']:.1f}")
+
     df_assembly = pd.DataFrame(
         {
             "Element": name,
             "Serial": serial,
-            "Length [m]": line_length,
+            "Length[m]": line_length,
             "Section": section,
             "Clamped with": clamped_with,
-            "Height [in ASB]": height,
+            "Height[in ASB]": height,
+            "Weight[kg]": weight,
         }
     )
     info = f"{mooring}: Assembly summary"

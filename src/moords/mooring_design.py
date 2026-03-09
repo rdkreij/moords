@@ -55,6 +55,7 @@ def load_database_from_csv(path_csv: str) -> pd.DataFrame:
         "type": "str",
         "name": "str",
         "buoyancy_kg": "float64",
+        "weight_kg": "float64",
         "length_m": "float64",
         "width_m": "float64",
         "diameter_m": "float64",
@@ -75,11 +76,13 @@ def get_property_database(
     bool_line: bool,
     passive_weight: bool = False,
     passive_drag: bool = False,
+    warn_missing_weight: bool = False,
 ) -> dict:
     """Request properties given the name of an element."""
     property_dict = df.loc[name].to_dict()
     if passive_weight:
         property_dict["buoyancy_kg"] = 0
+        property_dict["weight_kg"] = 0
     if passive_drag:
         property_dict["diameter_m"] = 0
         property_dict["width_m"] = 0
@@ -88,6 +91,7 @@ def get_property_database(
     # Raise error missing properties
     check_property = [
         "buoyancy_kg",
+        "weight_kg",
         "length_m",
         "width_m",
         "diameter_m",
@@ -95,18 +99,34 @@ def get_property_database(
         "material",
     ]
     for prop in check_property:
+        # value = property_dict[prop]
+        # try:
+        #     bool_material = prop == "material"
+        #     bool_missing = pd.isna(value)
+        #     if bool_missing and (not bool_line and not bool_material or bool_line):
+        #         set_value = int(bool_material)
+        #         raise ValueError(
+        #             f"Element {name} has missing property "
+        #             f"{prop} in database; {prop} set to {set_value}."
+        #         )
+        # except ValueError as e:
+        #     print(f"Error: {e}")
+        #     property_dict[prop] = set_value
         value = property_dict[prop]
-        try:
-            bool_material = prop == "material"
-            bool_missing = pd.isna(value)
-            if bool_missing and (not bool_line and not bool_material or bool_line):
-                set_value = int(bool_material)
-                raise ValueError(
-                    f"Element {name} has missing property "
+
+        bool_material = prop == "material"
+        bool_weight = prop == "weight_kg"
+        bool_missing = pd.isna(value)
+
+        if bool_missing and not bool_material:
+            set_value = int(bool_material)
+
+            if not bool_weight or (bool_weight and warn_missing_weight):
+                print(
+                    f"Error: Element {name} has missing property "
                     f"{prop} in database; {prop} set to {set_value}."
                 )
-        except ValueError as e:
-            print(f"Error: {e}")
+
             property_dict[prop] = set_value
     return property_dict
 
@@ -126,6 +146,7 @@ class ClampOn:
         "length",
         "bool_fit",
         "buoyancy",
+        "weight",
         "width",
         "diameter",
         "drag",
@@ -150,16 +171,23 @@ class ClampOn:
         passive_weight: bool = False,
         passive_drag: bool = False,
         clamped_with: str | None = None,
+        warn_missing_weight: bool = False,
     ) -> None:
         self.name = name
         self.serial = serial
         self.passive_weight = passive_weight
         self.passive_drag = passive_drag
+        self.warn_missing_weight = warn_missing_weight
         self.clamped_with = clamped_with
 
         # Retrieve properties from the mooring database
         prop = get_property_database(
-            df_database, name, False, self.passive_weight, self.passive_drag
+            df_database,
+            name,
+            False,
+            self.passive_weight,
+            self.passive_drag,
+            self.warn_missing_weight,
         )
 
         # Set attributes based on the properties from the database
@@ -169,6 +197,7 @@ class ClampOn:
         self.material = prop.get("material")
         self.comment = prop.get("comment")
         self.buoyancy = prop.get("buoyancy_kg")
+        self.weight = prop.get("weight_kg")
         self.diameter = prop.get("diameter_m")
         self.drag = prop.get("drag")
 
@@ -229,6 +258,8 @@ class InLine:
         "total_buoyancy",
         "num_inline",
         "id",
+        "weight",
+        "total_weight",
     ]
 
     def __init__(
@@ -238,18 +269,26 @@ class InLine:
         line_length: float | None = None,
         serial: str | None = None,
         section: str | None = None,
+        warn_missing_weight: bool = False,
     ) -> None:
         self.name = name
         self.serial = serial
         self.section = section
         self.bool_line = line_length is not None
+        self.warn_missing_weight = warn_missing_weight
 
         # Retrieve properties from the mooring database
-        prop = get_property_database(df_database, name, self.bool_line)
+        prop = get_property_database(
+            df_database,
+            name,
+            self.bool_line,
+            warn_missing_weight=self.warn_missing_weight,
+        )
 
         # Set length and buoyancy based on whether line_length is provided
         self.length = line_length if line_length is not None else prop.get("length_m")
         self.buoyancy = prop.get("buoyancy_kg") * (self.length if line_length else 1)
+        self.weight = prop.get("weight_kg") * (self.length if line_length else 1)
 
         # Set other attributes from the database properties
         self.type = prop.get("type")
@@ -264,6 +303,7 @@ class InLine:
         self.bottom_height = None
         self.num_inline = None
         self.total_buoyancy = self.buoyancy
+        self.total_weight = self.weight
         self.clamp_ons = []
         self.id = None
 
@@ -511,6 +551,9 @@ class Mooring:
 
         # Add to buoyancy
         elem.total_buoyancy += clamp.buoyancy
+
+        # Add to weight
+        elem.total_weight += clamp.weight
 
         # Fill in clamp targets
         clamp.clamped_to_name = elem.name
